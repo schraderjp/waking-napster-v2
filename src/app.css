@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply flex flex-col bg-yellow-100;
+        min-height: 100dvh;
+    }
+}

@@ -1,0 +1,57 @@
+<script lang="ts">
+  import "../app.css";
+  import "@fontsource/chewy";
+  import logo from "$lib/assets/WkngNpstr_03_open.svg";
+  import Nav from "$lib/components/Nav.svelte";
+  import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte'
+  import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte';
+  import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
+  import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
+  import {Hamburger} from 'svelte-hamburgers';
+  let open: boolean;
+</script>
+
+<div class="container mx-auto px-4 pt-2 relative">
+<header class="flex justify-center gap-x-12">
+  <img width="200" src={logo} alt="Waking Napster logo">
+  <div class="hidden md:flex">
+    <Nav on:click={()=> open = !open} />
+  </div>
+  <div class="md:hidden flex items-end flex-col absolute top-0 right-0">
+    <div class={`flex items-end justify-end rounded-full z-20 ${open ? "bg-yellow-200": "bg-yellow-100"}`}>
+      <Hamburger --color="#db2777" --hover-opacity="1" --active-color="#a855f7" --layer-width="2rem" --layer-height="0.25rem" --padding="1.5rem" bind:open />
+    </div>    
+    {#if open}
+      <Nav on:click={()=> open = !open}/>
+    {/if}
+  </div>
+</header>
+<main>
+
+</main>
+</div>
+<slot />
+<footer
+      class="mt-auto flex flex-col items-center justify-center gap-4 py-8"
+    >
+      <div class="flex items-end gap-x-6 ">
+        <a class="h-14 text-blue-500 transition-transform hover:scale-125 hover:text-purple-400" href="https://www.facebook.com/wakingnapster/">
+          <FaFacebook />
+          <span class="sr-only">Facebook</span></a
+        >
+        <a class="h-14 text-blue-500 transition-transform hover:scale-125 hover:text-purple-400" href="https://www.instagram.com/waking_napster/?hl=en">
+          <FaInstagram />
+          <span class="sr-only">Instagram</span></a
+        >
+        <a class="h-14 text-blue-500 transition-transform hover:scale-125 hover:text-purple-400" href="https://www.youtube.com/channel/UCKQjTyWs0zUaTXDL---ovLg">
+          <FaYoutube />
+          <span class="sr-only">YouTube</span></a
+        >
+        <a class="h-14 text-blue-500 transition-transform hover:scale-125 hover:text-purple-400" href="https://soundcloud.com/waking-napster">
+          <FaSoundcloud />
+          <span class="sr-only">Soundcloud</span></a
+        >
+      </div>
+
+      <p class="font-bold text-pink-600">&copy; Waking Napster 2023</p>
+    </footer>
