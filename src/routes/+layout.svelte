@@ -8,7 +8,7 @@
   import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
   import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
   import {Hamburger} from 'svelte-hamburgers';
-  let open: boolean;
+  let open: boolean = false;
 </script>
 
 <div class="container mx-auto px-4 pt-2 relative">
