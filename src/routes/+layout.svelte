@@ -18,7 +18,7 @@
     <Nav on:click={()=> open = !open} />
   </div>
   <div class="md:hidden flex items-end flex-col absolute top-0 right-0">
-    <div class={`flex items-end justify-end rounded-full z-20 ${open ? "bg-yellow-200": "bg-yellow-100"}`}>
+    <div class={`flex items-end justify-end z-20`}>
       <Hamburger --color="#db2777" --hover-opacity="1" --active-color="#a855f7" --layer-width="2rem" --layer-height="0.25rem" --padding="1.5rem" bind:open />
     </div>    
     {#if open}

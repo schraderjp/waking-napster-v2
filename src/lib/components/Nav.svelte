@@ -1,8 +1,11 @@
 <script lang="ts">
+	import { fade } from "svelte/transition";
+
 	// export let open: boolean;
 </script>
 
 <nav
+transition:fade={{ delay: 50, duration: 150 }}
 	class="fixed md:relative bottom-0 left-0 top-0 z-10 flex w-screen md:w-max flex-col items-center justify-around gap-x-4 rounded-md md:bg-inherit bg-yellow-200 pt-4 md:flex-row"
 >
 	<a
