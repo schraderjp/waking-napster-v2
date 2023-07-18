@@ -4,7 +4,8 @@ export default {
   theme: {
 		extend: {
 			fontFamily: {
-				chewy: "Chewy"
+				chewy: "Chewy",
+				lato: "Lato"
 			}
 		},
 	},

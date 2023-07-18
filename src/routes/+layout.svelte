@@ -1,6 +1,7 @@
 <script lang="ts">
   import "../app.css";
   import "@fontsource/chewy";
+  import '@fontsource/lato';
   import logo from "$lib/assets/WkngNpstr_03_open.svg";
   import Nav from "$lib/components/Nav.svelte";
   import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte'
@@ -18,7 +19,7 @@
     <Nav on:click={()=> open = !open} />
   </div>
   <div class="md:hidden flex items-end flex-col absolute top-0 right-0">
-    <div class={`flex items-end justify-end z-20`}>
+    <div class={`flex items-end justify-end z-30 ${open ? 'fixed': ''}`}>
       <Hamburger --color="#db2777" --hover-opacity="1" --active-color="#a855f7" --layer-width="2rem" --layer-height="0.25rem" --padding="1.5rem" bind:open />
     </div>    
     {#if open}
