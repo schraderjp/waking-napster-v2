@@ -10,8 +10,7 @@
     <img class="lg:max-w-md w-4/5 my-4 rounded-md shadow-lg" src={bandPhoto} alt="artistic representation of Waking Napster band members" />
     <div class="mt-8 mx-2 lg:max-w-md w-4/5 p-4 relative flex items-center justify-center">
         <p class="z-10 font-bold text-2xl rounded-xl bg-purple-700 font-lato text-yellow-200 p-4 leading-loose">      A cover band playing a wide mix of songs you "allegedly" downloaded to
-            your Napster library back in the day. 
-            There is something for everyone!</p>
+            your Napster library back in the day.</p>
         <div class="rotate-3 rounded-xl absolute top-0 left-0 right-0 bottom-0 bg-pink-400"></div>
         <div class="rotate-3 rounded-xl -translate-x-2 -translate-y-2 absolute top-0 left-0 right-0 bottom-0 bg-green-400"></div>
         <div class="absolute -rotate-3 rounded-xl -translate-x-1 top-2 left-2 right-2 bottom-2 bg-indigo-300"></div>
