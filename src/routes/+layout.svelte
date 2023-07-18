@@ -9,9 +9,11 @@
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
 	import { Hamburger } from 'svelte-hamburgers';
+	import { browser } from '$app/environment';
 	let open: boolean = false;
 
 	function enableDisableScrollbar(openStatus: boolean) {
+		if (!browser) return;
 		if (openStatus!!) document.body.style.overflow = 'hidden';
 		if (!openStatus) document.body.style.overflow = 'auto';
 	}
