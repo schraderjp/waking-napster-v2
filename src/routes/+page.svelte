@@ -1,5 +1,6 @@
 <script>
 	import Youtube from 'svelte-youtube-embed';
+	import MdPlayCircleOutline from 'svelte-icons/md/MdPlayCircleOutline.svelte';
 </script>
 
 <svelte:head>
@@ -11,7 +12,17 @@
 >
 	<div class="custom-box-shadow w-[90vw] rounded-md bg-teal-400 lg:w-7/12">
 		<div class="rounded-md p-4">
-			<Youtube id="1ep1KKOEX0Q" />
+			<Youtube
+				id="1ep1KKOEX0Q"
+				--title-color="white"
+				--title-shadow-color="rgb(129, 140, 248)"
+				--title-font-family="Chewy"
+			>
+				<button
+					class="h-24 w-24 rounded-full bg-indigo-400 text-pink-200 transition-all hover:scale-110 hover:bg-pink-200 hover:text-indigo-400"
+					><MdPlayCircleOutline />
+				</button>
+			</Youtube>
 		</div>
 	</div>
 	<div class="relative mx-2 mt-8 flex w-[85vw] items-center justify-center p-4 lg:w-5/12">
