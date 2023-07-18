@@ -11,16 +11,23 @@
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
 	let open: boolean = false;
+	let screenSize: number;
 
 	function enableDisableScrollbar(openStatus: boolean) {
 		if (!browser) return;
-		if (openStatus!!) document.body.style.overflow = 'hidden';
-		if (!openStatus) document.body.style.overflow = 'auto';
+		if (!!openStatus) document.body.style.overflow = 'hidden';
+		if (!openStatus || screenSize >= 768) document.body.style.overflow = 'auto';
+	}
+
+	function closeMenuOnResize() {
+		if (screenSize >= 768) open = false;
 	}
 
 	$: open, enableDisableScrollbar(open);
+	$: screenSize, closeMenuOnResize();
 </script>
 
+<svelte:window bind:innerWidth={screenSize} />
 <div class="container relative mx-auto flex flex-col px-4 pt-2">
 	<header class="flex justify-center gap-x-12">
 		<img width="200" src={logo} alt="Waking Napster logo" />
