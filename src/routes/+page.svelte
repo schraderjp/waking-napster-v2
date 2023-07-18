@@ -17,8 +17,8 @@
         
     </div>
 </div>
-<div class="flex items-center justify-center w-[min(95vw,64rem)] lg:w-3/5 mx-auto rounded-xl py-6 bg-teal-400">
-    <div class="max-w-[min(42rem,90vw)] flex-grow flex-shrink-0 px-4 my-4 rounded-md">
+<div class="flex items-center justify-center max-w-[min(90vw,42rem)] p-6 mt-4 lg:w-3/5 mx-auto rounded-xl bg-teal-400">
+    <div class="flex-grow flex-shrink-0 rounded-md">
         <!-- <h2 class="text-center mb-4 text-3xl font-lato font-bold ">2022 Promo Video</h2> -->
         <Youtube id="1ep1KKOEX0Q" />
     </div>
