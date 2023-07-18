@@ -1,10 +1,8 @@
 <script lang="ts">
-	import FacebookWidget from '$lib/components/FacebookWidget.svelte';
-
 	let screenSize: number;
 	let src =
 		'https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=America%2FNew_York&mode=AGENDA&showTabs=1&src=d2FraW5nbmFwc3RlckBnbWFpbC5jb20&color=%23B39DDB';
-
+	import '@fullcalendar/core/vdom';
 	import { Calendar } from '@fullcalendar/core';
 	import googleCalendarPlugin from '@fullcalendar/google-calendar';
 	import { onMount } from 'svelte';
