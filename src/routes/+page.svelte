@@ -9,7 +9,7 @@
 <div
 	class="relative mx-auto mt-8 flex flex-col items-center justify-center gap-x-8 px-4 md:flex-row lg:max-w-5xl"
 >
-	<div class="w-[90vw] rounded-md bg-teal-400 lg:w-7/12">
+	<div class="custom-box-shadow w-[90vw] rounded-md bg-teal-400 lg:w-7/12">
 		<div class="rounded-md p-4">
 			<Youtube id="1ep1KKOEX0Q" />
 		</div>
@@ -28,3 +28,9 @@
 		/>
 	</div>
 </div>
+
+<style>
+	.custom-box-shadow {
+		box-shadow: 10px 10px 0px 0px #fde047 !important;
+	}
+</style>
