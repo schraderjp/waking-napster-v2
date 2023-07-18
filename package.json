@@ -32,6 +32,7 @@
 	"dependencies": {
 		"@fontsource/chewy": "^5.0.5",
 		"@fontsource/lato": "^5.0.5",
+		"@sveltejs/adapter-netlify": "^2.0.8",
 		"svelte-icons": "^2.1.0"
 	}
 }
