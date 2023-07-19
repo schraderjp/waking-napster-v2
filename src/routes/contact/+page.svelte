@@ -11,7 +11,6 @@
 </div>
 <form
 	class="mx-auto flex max-w-md flex-col gap-y-4 font-chewy text-xl text-purple-600"
-	action="submit"
 	name="contact"
 	method="POST"
 	data-netlify="true"
@@ -34,4 +33,5 @@
 			type="submit">Submit</button
 		>
 	</div>
+	<input type="hidden" name="form-name" value="contact" />
 </form>
