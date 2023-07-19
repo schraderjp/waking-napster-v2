@@ -1,3 +1,7 @@
+<script>
+	export const prerender = true;
+</script>
+
 <svelte:head>
 	<title>Waking Napster - Contact Us</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
@@ -7,8 +11,10 @@
 </div>
 <form
 	class="mx-auto flex max-w-md flex-col gap-y-4 font-chewy text-xl text-purple-600"
-	on:submit|preventDefault
 	action="submit"
+	name="contact"
+	method="POST"
+	data-netlify="true"
 >
 	<div class="flex flex-col">
 		<label for="name">Name</label>

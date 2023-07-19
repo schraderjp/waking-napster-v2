@@ -18,6 +18,10 @@
     --fc-list-event-hover-bg-color: #dbeafe;
 }
 
+.fc-list-event {
+    cursor: pointer;
+}
+
 @layer base {
     body {
         @apply flex flex-col bg-yellow-100;

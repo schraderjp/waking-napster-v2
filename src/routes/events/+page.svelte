@@ -50,6 +50,7 @@
 			},
 			eventDataTransform(input) {
 				console.log(input);
+				input.url = '';
 				if (input.title?.toLowerCase().includes('blocked')) {
 					input.display = 'none';
 				}
@@ -86,9 +87,7 @@
 	class="rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
 	bind:this={dialog}
 >
-	<button class="float-right h-10 w-10 pr-2 pt-2" on:click={() => dialog.close()}
-		><MdClose /></button
-	>
+	<button class="float-right h-10 w-10 p-2" on:click={() => dialog.close()}><MdClose /></button>
 
 	<table>
 		<tbody>
