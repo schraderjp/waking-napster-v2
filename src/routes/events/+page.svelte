@@ -1,4 +1,9 @@
 <script lang="ts">
+	type DialogData = {
+		title: string;
+		location: string;
+	};
+
 	let screenSize: number;
 	let src =
 		'https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=America%2FNew_York&mode=AGENDA&showTabs=1&src=d2FraW5nbmFwc3RlckBnbWFpbC5jb20&color=%23B39DDB';
@@ -8,6 +13,15 @@
 	import dayGridPlugin from '@fullcalendar/daygrid';
 	import listPlugin from '@fullcalendar/list';
 	import { browser } from '$app/environment';
+	import { Input } from 'postcss';
+	import MdClose from 'svelte-icons/md/MdClose.svelte';
+	import { fade } from 'svelte/transition';
+
+	let dialog: HTMLDialogElement;
+	let dialogInfo: DialogData = {
+		title: '',
+		location: ''
+	};
 
 	onMount(() => {
 		if (!browser) return;
@@ -36,29 +50,24 @@
 			},
 			eventDataTransform(input) {
 				console.log(input);
-				if (input.title === 'BLOCKED') {
+				if (input.title?.toLowerCase().includes('blocked')) {
 					input.display = 'none';
 				}
 				return input;
 			},
 			eventClick: (info) => {
-				// info.jsEvent.preventDefault();
-			},
-			eventSourceSuccess(eventsInput, response) {
-				console.log(eventsInput);
-				const filteredItems = eventsInput.filter((item) => {
-					return item.title !== 'BLOCKED';
-				});
+				info.jsEvent.preventDefault();
+				dialogInfo = {
+					title: info.event.title,
+					location: info.event.extendedProps.location
+				};
+				dialog.showModal();
 			}
 		});
 		calendar.render();
 	});
 </script>
 
-<!-- <svelte:head>
-    <script async defer crossorigin="anonymous"
-			src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="jo78AhzS"></script>
-</svelte:head> -->
 <svelte:head>
 	<title>Waking Napster - Events</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
@@ -72,4 +81,37 @@
 	class="h- relative mx-auto mt-4 max-w-3xl rounded-lg bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:bg-pink-400"
 	id="calendar"
 />
-<!-- <Facebook Widget /> -->
+<dialog
+	transition:fade
+	class="rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
+	bind:this={dialog}
+>
+	<button class="float-right h-10 w-10 pr-2 pt-2" on:click={() => dialog.close()}
+		><MdClose /></button
+	>
+
+	<table>
+		<tbody>
+			<tr>
+				<td class="pt-4"><strong class="px-4">Event:</strong></td>
+				<td><p class="pr-4 pt-4">{dialogInfo.title}</p></td>
+			</tr>
+			<tr>
+				<td><strong class="px-4">Location:</strong></td>
+				<td><p class="pb-4 pr-4">{dialogInfo.location}</p></td>
+			</tr>
+		</tbody>
+	</table>
+</dialog>
+
+<style>
+	td {
+		vertical-align: top;
+	}
+
+	dialog::backdrop,
+	dialog {
+		backdrop-filter: blur(8px) brightness(50%);
+		-webkit-backdrop-filter: blur(8px);
+	}
+</style>
