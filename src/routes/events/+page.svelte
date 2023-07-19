@@ -15,7 +15,22 @@
 		const calendar = new Calendar(calendarEl as HTMLElement, {
 			plugins: [googleCalendarPlugin, dayGridPlugin, listPlugin],
 			googleCalendarApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
-			initialView: 'listWeek',
+			initialView: 'listMonth',
+
+			titleFormat: { year: 'numeric', month: 'short' },
+			headerToolbar: {
+				start: 'title',
+				center: 'today',
+				end: 'prev,next'
+			},
+			buttonText: {
+				today: 'Today',
+				month: 'month',
+				week: 'week',
+				day: 'day',
+				list: 'list'
+			},
+			contentHeight: 'auto',
 			events: {
 				googleCalendarId: 'wakingnapster@gmail.com'
 			},
@@ -26,8 +41,11 @@
 				}
 				return input;
 			},
+			eventClick: (info) => {
+				// info.jsEvent.preventDefault();
+			},
 			eventSourceSuccess(eventsInput, response) {
-				console.log(eventsInput[0].title);
+				console.log(eventsInput);
 				const filteredItems = eventsInput.filter((item) => {
 					return item.title !== 'BLOCKED';
 				});
@@ -50,5 +68,8 @@
 <div class="flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 </div>
-<div class="max-w-3xl mt-4 before:absolute before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-pink-400 mx-auto bg-blue-200 p-4 rounded-lg font-lato relative" id="calendar" />
+<div
+	class="h- relative mx-auto mt-4 max-w-3xl rounded-lg bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:bg-pink-400"
+	id="calendar"
+/>
 <!-- <Facebook Widget /> -->
