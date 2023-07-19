@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --fc-neutral-bg-color: #a5b4fc;
+    --fc-page-bg-color: #a5b4fc;
+    --fc-neutral-text-color: grey;
+    --fc-border-color: #ddd;
+    --fc-button-text-color: #db2777;
+    --fc-button-bg-color: #fde047;
+    --fc-button-border-color: #db2777;
+    --fc-button-hover-bg-color: #facc15;
+    --fc-button-hover-border-color: #ec4899;
+    --fc-button-active-bg-color: #1a252f;
+    --fc-button-active-border-color: yellow;
+    --fc-list-event-dot-width: 10px;
+    --fc-list-event-hover-bg-color: #dbeafe;
+}
+
 @layer base {
     body {
         @apply flex flex-col bg-yellow-100;
@@ -12,9 +28,9 @@
         @apply rounded-md !important;
     }
 
-    /* img {
-        @apply rounded-md shadow-xl;
-    } */
+    .fc-list-day {
+        @apply bg-red-400;
+    }
 }
 @layer components {
     

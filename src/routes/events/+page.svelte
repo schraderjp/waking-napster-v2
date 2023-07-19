@@ -6,15 +6,16 @@
 	import googleCalendarPlugin from '@fullcalendar/google-calendar';
 	import { onMount } from 'svelte';
 	import dayGridPlugin from '@fullcalendar/daygrid';
+	import listPlugin from '@fullcalendar/list';
 	import { browser } from '$app/environment';
 
 	onMount(() => {
 		if (!browser) return;
 		const calendarEl = document.getElementById('calendar');
 		const calendar = new Calendar(calendarEl as HTMLElement, {
-			plugins: [googleCalendarPlugin, dayGridPlugin],
+			plugins: [googleCalendarPlugin, dayGridPlugin, listPlugin],
 			googleCalendarApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
-			initialView: 'dayGridMonth',
+			initialView: 'listWeek',
 			events: {
 				googleCalendarId: 'wakingnapster@gmail.com'
 			},
@@ -49,5 +50,5 @@
 <div class="flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 </div>
-<div id="calendar" />
+<div class="max-w-3xl mt-4 before:absolute before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-pink-400 mx-auto bg-blue-200 p-4 rounded-lg font-lato relative" id="calendar" />
 <!-- <Facebook Widget /> -->
