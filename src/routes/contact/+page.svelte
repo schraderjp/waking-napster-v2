@@ -1,5 +1,4 @@
 <script>
-	export const prerender = true;
 </script>
 
 <svelte:head>
@@ -14,6 +13,7 @@
 	name="contact"
 	method="POST"
 	data-netlify="true"
+	action="/contact/success"
 >
 	<div class="flex flex-col">
 		<label for="name">Name</label>
@@ -25,7 +25,7 @@
 	</div>
 	<div class="flex flex-col">
 		<label for="message">Message</label>
-		<input class="min-h-[8rem] rounded-md" type="text" name="message" id="message" />
+		<textarea class="min-h-[8rem] rounded-md" name="message" id="message" />
 	</div>
 	<div class="flex items-center justify-center">
 		<button
