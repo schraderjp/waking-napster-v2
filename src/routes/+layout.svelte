@@ -7,6 +7,7 @@
 	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte';
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
+	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
@@ -83,6 +84,13 @@
 		>
 			<FaSoundcloud />
 			<span class="sr-only">Soundcloud</span></a
+		>
+		<a
+			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+			href="mailto:wakingnapster@gmail.com"
+		>
+			<MdEmail />
+			<span class="sr-only">Email</span></a
 		>
 	</div>
 
