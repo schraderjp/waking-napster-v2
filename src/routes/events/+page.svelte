@@ -2,6 +2,7 @@
 	type DialogData = {
 		title: string;
 		location: string;
+		mapUrl: string;
 	};
 
 	let screenSize: number;
@@ -20,7 +21,8 @@
 	let dialog: HTMLDialogElement;
 	let dialogInfo: DialogData = {
 		title: '',
-		location: ''
+		location: '',
+		mapUrl: ''
 	};
 
 	onMount(() => {
@@ -54,14 +56,24 @@
 				if (input.title?.toLowerCase().includes('blocked')) {
 					input.display = 'none';
 				}
+
 				return input;
 			},
 			eventClick: (info) => {
 				info.jsEvent.preventDefault();
+				if (!!info.event.extendedProps?.location) {
+					const googleMapsUrl = encodeURI(
+						'https://www.google.com/maps/search/?api=1&query=' + info.event.extendedProps.location
+					);
+					info.event.setExtendedProp('mapUrl', googleMapsUrl);
+				}
+				console.log(info.event);
 				dialogInfo = {
 					title: info.event.title,
-					location: info.event.extendedProps.location
+					location: info.event.extendedProps.location,
+					mapUrl: info.event.extendedProps.mapUrl ? info.event.extendedProps.mapUrl : ''
 				};
+
 				dialog.showModal();
 			}
 		});
@@ -84,21 +96,30 @@
 />
 <dialog
 	transition:fade
-	class="rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
+	class="max-w-[min(70ch,90vw)] rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
 	bind:this={dialog}
 >
 	<button class="float-right h-10 w-10 p-2" on:click={() => dialog.close()}><MdClose /></button>
 
 	<table>
 		<tbody>
-			<tr>
-				<td class="pt-4"><strong class="px-4">Event:</strong></td>
-				<td><p class="pr-4 pt-4">{dialogInfo.title}</p></td>
+			<tr class="">
+				<td class="p-4"><strong class="">Event:</strong></td>
+				<td class="p-4"><p>{dialogInfo.title}</p></td>
 			</tr>
-			<tr>
-				<td><strong class="px-4">Location:</strong></td>
-				<td><p class="pb-4 pr-4">{dialogInfo.location}</p></td>
-			</tr>
+			{#if !!dialogInfo.location}
+				<tr>
+					<td class="p-4"><strong class="">Location:</strong></td>
+					<td class="p-4"
+						><a
+							class="text-blue-700 underline"
+							href={encodeURI(
+								'https://www.google.com/maps/search/?api=1&query=' + dialogInfo.location
+							)}>{dialogInfo.location}</a
+						></td
+					>
+				</tr>
+			{/if}
 		</tbody>
 	</table>
 </dialog>
