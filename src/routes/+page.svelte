@@ -25,7 +25,7 @@
 			</Youtube>
 		</div>
 	</div>
-	<div class="relative mx-2 mt-8 flex w-[85vw] items-center justify-center p-4 lg:w-5/12">
+	<div class="relative mx-2 mt-10 flex w-[85vw] items-center justify-center p-4 lg:w-5/12">
 		<p class="z-10 rounded-xl bg-purple-700 p-4 font-chewy text-xl leading-loose text-yellow-200">
 			Waking Napster is a cover band playing a wide mix of songs you "allegedly" downloaded to your
 			Napster library back in the day.
