@@ -17,6 +17,7 @@
 	import { Input } from 'postcss';
 	import MdClose from 'svelte-icons/md/MdClose.svelte';
 	import { fade } from 'svelte/transition';
+	import PageTransition from '$lib/components/PageTransition.svelte';
 
 	let dialog: HTMLDialogElement;
 	let dialogInfo: DialogData = {
@@ -25,10 +26,12 @@
 		mapUrl: ''
 	};
 
-	onMount(() => {
+	let calendar: Calendar;
+
+	function initCalendar() {
 		if (!browser) return;
 		const calendarEl = document.getElementById('calendar');
-		const calendar = new Calendar(calendarEl as HTMLElement, {
+		calendar = new Calendar(calendarEl as HTMLElement, {
 			plugins: [googleCalendarPlugin, dayGridPlugin, listPlugin],
 			googleCalendarApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
 			initialView: 'listMonth',
@@ -78,6 +81,13 @@
 			}
 		});
 		calendar.render();
+	}
+
+	onMount(() => {
+		initCalendar();
+		return () => {
+			calendar && calendar.destroy();
+		};
 	});
 </script>
 
@@ -87,42 +97,43 @@
 </svelte:head>
 <svelte:window bind:innerWidth={screenSize} />
 
-<div class="flex flex-col items-center justify-center">
-	<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
-</div>
-<div
-	class="relative mx-auto mt-4 max-w-3xl rounded-lg bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:bg-pink-400"
-	id="calendar"
-/>
-<dialog
-	transition:fade
-	class="max-w-[min(70ch,90vw)] rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
-	bind:this={dialog}
->
-	<button class="float-right h-10 w-10 p-2" on:click={() => dialog.close()}><MdClose /></button>
+<div>
+	<div class="flex flex-col items-center justify-center">
+		<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
+	</div>
+	<div
+		class="relative mx-auto mt-4 max-w-3xl rounded-lg bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:bg-pink-400"
+		id="calendar"
+	/>
+	<dialog
+		class="max-w-[min(70ch,90vw)] rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
+		bind:this={dialog}
+	>
+		<button class="float-right h-10 w-10 p-2" on:click={() => dialog.close()}><MdClose /></button>
 
-	<table>
-		<tbody>
-			<tr class="">
-				<td class="p-4"><strong class="">Event:</strong></td>
-				<td class="p-4"><p>{dialogInfo.title}</p></td>
-			</tr>
-			{#if !!dialogInfo.location}
-				<tr>
-					<td class="p-4"><strong class="">Location:</strong></td>
-					<td class="p-4"
-						><a
-							class="text-blue-700 underline"
-							href={encodeURI(
-								'https://www.google.com/maps/search/?api=1&query=' + dialogInfo.location
-							)}>{dialogInfo.location}</a
-						></td
-					>
+		<table>
+			<tbody>
+				<tr class="">
+					<td class="p-4"><strong class="">Event:</strong></td>
+					<td class="p-4"><p>{dialogInfo.title}</p></td>
 				</tr>
-			{/if}
-		</tbody>
-	</table>
-</dialog>
+				{#if !!dialogInfo.location}
+					<tr>
+						<td class="p-4"><strong class="">Location:</strong></td>
+						<td class="p-4"
+							><a
+								class="text-blue-700 underline"
+								href={encodeURI(
+									'https://www.google.com/maps/search/?api=1&query=' + dialogInfo.location
+								)}>{dialogInfo.location}</a
+							></td
+						>
+					</tr>
+				{/if}
+			</tbody>
+		</table>
+	</dialog>
+</div>
 
 <style>
 	td {

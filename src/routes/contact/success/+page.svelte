@@ -1,3 +1,7 @@
+<script>
+	import PageTransition from '$lib/components/PageTransition.svelte';
+</script>
+
 <div class="relative mx-auto mt-6 flex w-max flex-col items-center justify-center">
 	<div
 		class="absolute bottom-0 left-0 right-0 top-0 z-0 translate-x-4 translate-y-4 rounded-md bg-green-300"

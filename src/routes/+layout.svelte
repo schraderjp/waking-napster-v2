@@ -11,8 +11,13 @@
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
+	import { fade } from 'svelte/transition';
+
 	let open: boolean = false;
 	let screenSize: number;
+	export let data;
+
+	$: pathname = data.pathname;
 
 	function enableDisableScrollbar(openStatus: boolean) {
 		if (!browser) return;
@@ -35,8 +40,8 @@
 		<div class="hidden md:flex">
 			<Nav on:click={() => (open = !open)} />
 		</div>
-		<div class="absolute right-0 top-0 flex flex-col items-end md:hidden">
-			<div class={`z-30 flex items-end justify-end ${open ? 'fixed' : ''}`}>
+		<div class="absolute right-0 top-0 z-40 flex flex-col items-end md:hidden">
+			<div class={`z-50 flex items-end justify-end ${open ? 'fixed' : ''}`}>
 				<Hamburger
 					--color="#db2777"
 					--hover-opacity="1"
@@ -48,51 +53,60 @@
 				/>
 			</div>
 			{#if open}
-				<Nav on:click={() => (open = !open)} />
+				<div in:fade={{ duration: 150 }} out:fade={{ duration: 150, delay: 150 }}>
+					<Nav on:click={() => (open = !open)} />
+				</div>
 			{/if}
 		</div>
 	</header>
-	<main><slot /></main>
+	{#key pathname}
+		<main in:fade={{ duration: 150, delay: 250 }} out:fade={{ duration: 150 }}><slot /></main>
+	{/key}
 </div>
+{#key pathname}
+	<footer
+		in:fade={{ duration: 150, delay: 250 }}
+		out:fade={{ duration: 150 }}
+		class="mt-auto flex flex-col items-center justify-center gap-4 py-8"
+	>
+		<div class="flex h-14 items-center justify-center gap-x-4">
+			<a
+				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				href="https://www.facebook.com/wakingnapster/"
+			>
+				<FaFacebook />
+				<span class="sr-only">Facebook</span></a
+			>
+			<a
+				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				href="https://www.instagram.com/waking_napster/?hl=en"
+			>
+				<FaInstagram />
+				<span class="sr-only">Instagram</span></a
+			>
+			<a
+				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				href="https://www.youtube.com/channel/UCKQjTyWs0zUaTXDL---ovLg"
+			>
+				<FaYoutube />
+				<span class="sr-only">YouTube</span></a
+			>
+			<a
+				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				href="https://soundcloud.com/waking-napster"
+			>
+				<FaSoundcloud />
+				<span class="sr-only">Soundcloud</span></a
+			>
+			<a
+				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				href="mailto:wakingnapster@gmail.com"
+			>
+				<MdEmail />
+				<span class="sr-only">Email</span></a
+			>
+		</div>
 
-<footer class="mt-auto flex flex-col items-center justify-center gap-4 py-8">
-	<div class="flex h-14 items-center justify-center gap-x-4">
-		<a
-			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
-			href="https://www.facebook.com/wakingnapster/"
-		>
-			<FaFacebook />
-			<span class="sr-only">Facebook</span></a
-		>
-		<a
-			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
-			href="https://www.instagram.com/waking_napster/?hl=en"
-		>
-			<FaInstagram />
-			<span class="sr-only">Instagram</span></a
-		>
-		<a
-			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
-			href="https://www.youtube.com/channel/UCKQjTyWs0zUaTXDL---ovLg"
-		>
-			<FaYoutube />
-			<span class="sr-only">YouTube</span></a
-		>
-		<a
-			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
-			href="https://soundcloud.com/waking-napster"
-		>
-			<FaSoundcloud />
-			<span class="sr-only">Soundcloud</span></a
-		>
-		<a
-			class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
-			href="mailto:wakingnapster@gmail.com"
-		>
-			<MdEmail />
-			<span class="sr-only">Email</span></a
-		>
-	</div>
-
-	<p class="font-bold text-pink-600">&copy; Waking Napster 2023</p>
-</footer>
+		<p class="font-bold text-pink-600">&copy; Waking Napster 2023</p>
+	</footer>
+{/key}
