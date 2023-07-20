@@ -15,23 +15,33 @@
 	data-netlify="true"
 	action="/contact/success"
 >
+	<div class="flex gap-x-4">
+		<div class="flex flex-col">
+			<label for="first-name">First Name</label>
+			<input class="w-full rounded-md" type="text" required name="first-name" id="first-name" />
+		</div>
+		<div class="flex flex-col">
+			<label for="last-name">Last Name</label>
+			<input class="w-full rounded-md" type="text" required name="last-name" id="last-name" />
+		</div>
+	</div>
 	<div class="flex flex-col">
-		<label for="name">Name</label>
-		<input class="rounded-md" type="text" name="name" id="name" />
+		<label for="phone">Phone Number</label>
+		<input class="rounded-md" type="text" name="phone" id="phone" />
 	</div>
 	<div class="flex flex-col">
 		<label for="email">Email Address</label>
-		<input class="rounded-md" type="email" name="email" id="email" />
+		<input class="rounded-md" type="email" required name="email" id="email" />
 	</div>
 	<div class="flex flex-col">
 		<label for="message">Message</label>
-		<textarea class="min-h-[8rem] rounded-md" name="message" id="message" />
+		<textarea class="min-h-[8rem] rounded-md" name="message" required id="message" />
 	</div>
 	<div class="flex items-center justify-center">
-		<button
-			class="rounded-md border border-purple-600 bg-purple-200 px-4 py-2 transition-all hover:brightness-110 active:scale-90"
-			type="submit">Submit</button
-		>
+		<button class=" rounded-md px-4 py-2" type="submit">Submit</button>
 	</div>
 	<input type="hidden" name="form-name" value="contact" />
 </form>
+
+<style>
+</style>

@@ -22,6 +22,22 @@
     cursor: pointer;
 }
 
+form input, form textarea {
+    @apply font-lato text-blue-900;
+}
+
+form:invalid button {
+    @apply cursor-default select-none border-gray-500 bg-gray-300 text-gray-400;
+}
+
+form:valid button {
+    @apply rounded-md border hover:brightness-110 active:scale-95 border-purple-600 bg-purple-500 px-4 py-2 text-white transition-all;
+}
+
+input:invalid {
+    @apply border-2 border-red-600;
+}
+
 @layer base {
     body {
         @apply flex flex-col bg-yellow-100;
