@@ -10,7 +10,7 @@
 		'https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=America%2FNew_York&mode=AGENDA&showTabs=1&src=d2FraW5nbmFwc3RlckBnbWFpbC5jb20&color=%23B39DDB';
 	import { Calendar } from '@fullcalendar/core';
 	import googleCalendarPlugin from '@fullcalendar/google-calendar';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import dayGridPlugin from '@fullcalendar/daygrid';
 	import listPlugin from '@fullcalendar/list';
 	import { browser } from '$app/environment';
@@ -25,10 +25,12 @@
 		mapUrl: ''
 	};
 
+	let calendar: Calendar;
+
 	onMount(() => {
 		if (!browser) return;
 		const calendarEl = document.getElementById('calendar');
-		const calendar = new Calendar(calendarEl as HTMLElement, {
+		calendar = new Calendar(calendarEl as HTMLElement, {
 			plugins: [googleCalendarPlugin, dayGridPlugin, listPlugin],
 			googleCalendarApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
 			initialView: 'listMonth',
@@ -79,6 +81,8 @@
 		});
 		calendar.render();
 	});
+
+	onDestroy(() => calendar.destroy());
 </script>
 
 <svelte:head>
