@@ -5,7 +5,7 @@
 		mapUrl: string;
 	};
 
-	let screenSize: number;
+	
 	let src =
 		'https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=America%2FNew_York&mode=AGENDA&showTabs=1&src=d2FraW5nbmFwc3RlckBnbWFpbC5jb20&color=%23B39DDB';
 	import { Calendar } from '@fullcalendar/core';
@@ -95,7 +95,7 @@
 	<title>Waking Napster - Events</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<svelte:window bind:innerWidth={screenSize} />
+
 
 <div>
 	<div class="flex flex-col items-center justify-center">

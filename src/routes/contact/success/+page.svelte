@@ -1,5 +1,4 @@
 <script>
-	import PageTransition from '$lib/components/PageTransition.svelte';
 </script>
 
 <div class="relative mx-auto mt-6 flex w-max flex-col items-center justify-center">
