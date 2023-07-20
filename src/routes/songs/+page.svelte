@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let screenSize: number;
+	export let data;
+
+	onMount(() => console.log(data));
 </script>
 
 <svelte:head>

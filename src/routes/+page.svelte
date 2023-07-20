@@ -8,7 +8,7 @@
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
 <div
-	class="relative mx-auto mt-8 flex flex-col items-center justify-center gap-x-8 gap-y-10 px-4 lg:max-w-6xl lg:flex-row"
+	class="relative mx-auto mt-8 flex flex-col items-center justify-center gap-x-8 gap-y-6 px-4 lg:max-w-6xl lg:flex-row"
 >
 	<div class="custom-box-shadow w-[min(90vw,48rem)] rounded-md bg-teal-400 lg:w-7/12">
 		<div class="rounded-md p-4">
