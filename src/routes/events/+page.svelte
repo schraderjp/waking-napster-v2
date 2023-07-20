@@ -25,12 +25,10 @@
 		mapUrl: ''
 	};
 
-	let calendar: Calendar;
-
 	onMount(() => {
 		if (!browser) return;
 		const calendarEl = document.getElementById('calendar');
-		calendar = new Calendar(calendarEl as HTMLElement, {
+		const calendar = new Calendar(calendarEl as HTMLElement, {
 			plugins: [googleCalendarPlugin, dayGridPlugin, listPlugin],
 			googleCalendarApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
 			initialView: 'listMonth',
@@ -81,8 +79,6 @@
 		});
 		calendar.render();
 	});
-
-	onDestroy(() => calendar.destroy());
 </script>
 
 <svelte:head>
