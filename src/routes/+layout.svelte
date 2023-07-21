@@ -3,6 +3,7 @@
 	import '@fontsource/chewy';
 	import '@fontsource/lato';
 	import logo from '$lib/assets/WkngNpstr_03_open.svg';
+	import altLogo from '$lib/assets/WkngNpstr_01_closed(1).svg';
 	import Nav from '$lib/components/Nav.svelte';
 	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte';
@@ -12,10 +13,10 @@
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
 	import { fade } from 'svelte/transition';
-	import { navigating } from '$app/stores';
 
 	let open: boolean = false;
 	let screenSize: number;
+	let hovering = false;
 	export let data;
 
 	$: pathname = data.pathname;
@@ -37,7 +38,15 @@
 <svelte:window bind:innerWidth={screenSize} />
 <div class="container relative mx-auto flex flex-col px-4 pt-2">
 	<header class="flex justify-center gap-x-12">
-		<img width="200" src={logo} alt="Waking Napster logo" />
+		<img
+			on:focus={() => (hovering = true)}
+			on:blur={() => (hovering = false)}
+			on:mouseout={() => (hovering = false)}
+			on:mouseover={() => (hovering = true)}
+			width="200"
+			src={hovering ? altLogo : logo}
+			alt="Waking Napster logo"
+		/>
 		<div class="hidden md:flex">
 			<Nav on:click={() => (open = !open)} />
 		</div>
