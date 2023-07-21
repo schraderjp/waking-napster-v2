@@ -19,7 +19,6 @@
 				--title-font-family="Chewy"
 			>
 				<button
-					role="button"
 					class="h-24 w-24 rounded-full bg-indigo-400 text-pink-200 transition-all hover:scale-110 hover:bg-pink-200 hover:text-indigo-400"
 					><MdPlayCircleOutline />
 				</button>
