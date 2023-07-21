@@ -5,19 +5,13 @@
 		mapUrl: string;
 	};
 
-	
-	let src =
-		'https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=America%2FNew_York&mode=AGENDA&showTabs=1&src=d2FraW5nbmFwc3RlckBnbWFpbC5jb20&color=%23B39DDB';
 	import { Calendar } from '@fullcalendar/core';
 	import googleCalendarPlugin from '@fullcalendar/google-calendar';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import dayGridPlugin from '@fullcalendar/daygrid';
 	import listPlugin from '@fullcalendar/list';
 	import { browser } from '$app/environment';
-	import { Input } from 'postcss';
 	import MdClose from 'svelte-icons/md/MdClose.svelte';
-	import { fade } from 'svelte/transition';
-	import PageTransition from '$lib/components/PageTransition.svelte';
 
 	let dialog: HTMLDialogElement;
 	let dialogInfo: DialogData = {
@@ -54,7 +48,6 @@
 				googleCalendarId: 'wakingnapster@gmail.com'
 			},
 			eventDataTransform(input) {
-				console.log(input);
 				input.url = '';
 				if (input.title?.toLowerCase().includes('blocked')) {
 					input.display = 'none';
@@ -70,7 +63,6 @@
 					);
 					info.event.setExtendedProp('mapUrl', googleMapsUrl);
 				}
-				console.log(info.event);
 				dialogInfo = {
 					title: info.event.title,
 					location: info.event.extendedProps.location,
@@ -95,7 +87,6 @@
 	<title>Waking Napster - Events</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-
 
 <div>
 	<div class="flex flex-col items-center justify-center">

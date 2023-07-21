@@ -60,12 +60,12 @@
 		</div>
 	</header>
 	{#key pathname}
-		<main in:fade={{ duration: 150, delay: 250 }} out:fade={{ duration: 150 }}><slot /></main>
+		<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}><slot /></main>
 	{/key}
 </div>
 {#key pathname}
 	<footer
-		in:fade={{ duration: 150, delay: 250 }}
+		in:fade={{ duration: 150, delay: 150 }}
 		out:fade={{ duration: 150 }}
 		class="mt-auto flex flex-col items-center justify-center gap-4 py-8"
 	>
