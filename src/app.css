@@ -34,7 +34,7 @@ form:valid button {
     @apply rounded-md border hover:brightness-110 active:scale-95 border-purple-600 bg-purple-500 px-4 py-2 text-white transition-all;
 }
 
-input:invalid {
+input:not(:placeholder-shown):invalid {
     @apply border-2 border-red-600;
 }
 

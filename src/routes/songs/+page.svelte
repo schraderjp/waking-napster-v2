@@ -15,7 +15,7 @@
 			class="absolute bottom-0 left-0 right-0 top-0 -z-20 h-max -translate-x-2 translate-y-2 rounded-lg bg-green-300"
 		/>
 		<table
-			class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll rounded-lg border border-blue-300 bg-blue-100 font-lato text-xs sm:text-base"
+			class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces rounded-lg border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
 		>
 			<thead>
 				<tr class="rounded-lg sm:text-base">
@@ -41,7 +41,7 @@
 
 <style>
 	th {
-		@apply w-max border-spacing-0 bg-blue-500 p-2 text-left font-lato text-sm  text-yellow-100;
+		@apply max-w-max border-spacing-0 bg-blue-500 p-2 text-left font-lato text-sm  text-yellow-100;
 	}
 
 	tr {
@@ -57,7 +57,7 @@
 		@apply border-b border-blue-300;
 	}
 	td {
-		@apply w-max border-spacing-0 p-2;
+		@apply min-w-max border-spacing-0 whitespace-pre-line p-1;
 	}
 
 	td:not(:last-child),
@@ -67,7 +67,7 @@
 
 	td:first-child,
 	th:first-child {
-		@apply pl-4;
+		@apply pl-2;
 	}
 
 	td:last-child,
