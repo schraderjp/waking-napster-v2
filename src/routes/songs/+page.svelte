@@ -10,19 +10,19 @@
 <svelte:window bind:innerWidth={screenSize} />
 <div class="relative z-10 flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Our Song List</h1>
-	<div class="relative">
+	<div class="relative w-[min(90vw,46rem)] overflow-x-auto">
 		<div
-			class="absolute bottom-0 left-0 right-0 top-0 -z-20 -translate-x-2 translate-y-2 rounded-lg bg-green-300"
+			class="absolute bottom-0 left-0 right-0 top-0 -z-20 h-max -translate-x-2 translate-y-2 rounded-lg bg-green-300"
 		/>
 		<table
-			class="z-40 max-w-[min(90vw,46rem)] table-auto border-separate border-spacing-0 rounded-lg border border-blue-300 bg-blue-100 font-lato"
+			class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll rounded-lg border border-blue-300 bg-blue-100 font-lato text-sm sm:text-base"
 		>
 			<thead>
-				<tr class="rounded-lg">
-					<th class="rounded-tl-lg">Song Title</th>
+				<tr class="rounded-lg sm:text-base">
+					<th class="rounded-tl-lg">Title</th>
 					<th>Artist</th>
 					<th>Genre</th>
-					<th class="rounded-tr-lg">Release Year</th>
+					<th class="rounded-tr-lg">Year</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,7 +41,7 @@
 
 <style>
 	th {
-		@apply border-spacing-0 bg-blue-500 p-2 text-left font-lato text-xl text-yellow-100;
+		@apply w-max border-spacing-0 bg-blue-500 p-2 text-left font-lato text-sm  text-yellow-100;
 	}
 
 	tr {
@@ -57,7 +57,7 @@
 		@apply border-b border-blue-300;
 	}
 	td {
-		@apply border-spacing-0 p-2;
+		@apply w-max border-spacing-0 p-2;
 	}
 
 	td:not(:last-child),
