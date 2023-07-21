@@ -1,10 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	let screenSize: number;
 	export let data: { pathname: string; rows: string[][] };
-
-	onMount(() => console.log(data));
 </script>
 
 <svelte:head>
