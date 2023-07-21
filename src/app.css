@@ -38,6 +38,41 @@ input:not(:placeholder-shown):invalid {
     @apply border-2 border-red-600;
 }
 
+th {
+    @apply max-w-max border-spacing-0 bg-blue-500 p-2 text-left font-lato text-sm  text-yellow-100;
+}
+
+tr {
+    @apply border-spacing-0;
+}
+
+thead > tr:not(:last-child) > th,
+tbody > tr:not(:last-child) > td,
+tr:not(:last-child) > td,
+tr:not(:last-child) > th,
+thead:not(:last-child),
+tbody:not(:last-child) {
+    @apply border-b border-blue-300;
+}
+td {
+    @apply min-w-max border-spacing-0 whitespace-pre-line p-1;
+}
+
+td:not(:last-child),
+th:not(:last-child) {
+    @apply border-r border-blue-300;
+}
+
+td:first-child,
+th:first-child {
+    @apply pl-2;
+}
+
+td:last-child,
+th:last-child {
+    @apply pr-2;
+}
+
 @layer base {
     body {
         @apply flex flex-col bg-yellow-100;

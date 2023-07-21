@@ -63,20 +63,20 @@
 				/>
 			</div>
 			{#if open}
-				<div in:fade={{ duration: 150 }} out:fade={{ duration: 150, delay: 150 }}>
+				<div in:fade={{ duration: 50 }} out:fade={{ duration: 50, delay: 100 }}>
 					<Nav on:click={() => (open = !open)} />
 				</div>
 			{/if}
 		</div>
 	</header>
 	{#key pathname}
-		<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}><slot /></main>
+		<main in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}><slot /></main>
 	{/key}
 </div>
 {#key pathname}
 	<footer
-		in:fade={{ duration: 150, delay: 150 }}
-		out:fade={{ duration: 150 }}
+		in:fade={{ duration: 50, delay: 50 }}
+		out:fade={{ duration: 50 }}
 		class="mt-auto flex flex-col items-center justify-center gap-4 py-8"
 	>
 		<div class="flex h-14 items-center justify-center gap-x-4">
