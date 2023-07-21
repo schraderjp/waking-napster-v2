@@ -1,29 +1,17 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import smallLogo from '$lib/assets/WakingNapster6_03_open.png';
-	import { onMount } from 'svelte';
-	import { findDirectChildren } from '@fullcalendar/core/internal';
-
-	let screenSize: number;
-	// export let data: PageData;
-
 	const fetchSheetData = async () => {
 		const res = await fetch('/songs/api');
 		const songs = await res.json();
-		// console.log(songs);
+
 		return songs;
 	};
-
-	/* onMount(async () => {
-		await fetchSheetData();
-	}); */
 </script>
 
 <svelte:head>
 	<title>Waking Napster - Songs</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<svelte:window bind:innerWidth={screenSize} />
 <div class="relative z-10 flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Our Song List</h1>
 	<div class="relative w-[min(90vw,46rem)] overflow-x-auto">

@@ -73,6 +73,10 @@ th:last-child {
     @apply pr-2;
 }
 
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 @layer base {
     body {
         @apply flex flex-col bg-yellow-100;
