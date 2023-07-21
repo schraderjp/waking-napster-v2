@@ -14,7 +14,6 @@
 		<div
 			class="absolute bottom-0 left-0 right-0 top-0 -z-20 -translate-x-2 translate-y-2 rounded-lg bg-green-300"
 		/>
-
 		<table
 			class="z-40 max-w-[min(90vw,46rem)] table-auto border-separate border-spacing-0 rounded-lg border border-blue-300 bg-blue-100 font-lato"
 		>

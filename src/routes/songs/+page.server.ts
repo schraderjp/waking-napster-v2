@@ -9,6 +9,6 @@ export const load = (async () => {
     const data = res.data
     if (!data.valueRanges) return;
     return {
-        rows: data.valueRanges[0].values as object[]
+        rows: data.valueRanges[0].values as object[],
     };
 }) satisfies PageServerLoad;

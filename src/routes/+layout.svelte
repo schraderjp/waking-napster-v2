@@ -12,6 +12,7 @@
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
 	import { fade } from 'svelte/transition';
+	import { navigating } from '$app/stores';
 
 	let open: boolean = false;
 	let screenSize: number;
