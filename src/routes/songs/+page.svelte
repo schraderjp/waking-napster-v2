@@ -15,7 +15,7 @@
 			class="absolute bottom-0 left-0 right-0 top-0 -z-20 h-max -translate-x-2 translate-y-2 rounded-lg bg-green-300"
 		/>
 		<table
-			class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll rounded-lg border border-blue-300 bg-blue-100 font-lato text-sm sm:text-base"
+			class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll rounded-lg border border-blue-300 bg-blue-100 font-lato text-xs sm:text-base"
 		>
 			<thead>
 				<tr class="rounded-lg sm:text-base">
