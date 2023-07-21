@@ -1,8 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { google } from 'googleapis';
 
-const csr = false;
-
 const sheets = google.sheets({ version: 'v4', auth: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY });
 
 
