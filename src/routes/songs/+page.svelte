@@ -1,9 +1,22 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import smallLogo from '$lib/assets/WakingNapster6_03_open.png';
+	import { onMount } from 'svelte';
+	import { findDirectChildren } from '@fullcalendar/core/internal';
 
 	let screenSize: number;
-	export let data: PageData;
+	// export let data: PageData;
+
+	const fetchSheetData = async () => {
+		const res = await fetch('/songs/api');
+		const songs = await res.json();
+		// console.log(songs);
+		return songs;
+	};
+
+	/* onMount(async () => {
+		await fetchSheetData();
+	}); */
 </script>
 
 <svelte:head>
@@ -17,7 +30,7 @@
 		<div
 			class="absolute bottom-0 left-0 right-0 top-0 -z-20 h-max -translate-x-2 translate-y-2 rounded-lg bg-green-300"
 		/>
-		{#await data.streamed.sheetTest}
+		{#await fetchSheetData()}
 			<div class="mx-auto mt-8 flex w-16 animate-bounce items-center justify-center">
 				<img src={smallLogo} alt="Logo loading indicator" />
 			</div>

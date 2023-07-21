@@ -1,6 +1,5 @@
-/* import type { PageServerLoad } from './$types';
+import type { RequestHandler } from './$types';
 import { google } from 'googleapis';
-const prerender = true;
 const sheets = google.sheets({ version: 'v4', auth: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY });
 
 const getSheetData = async () => {
@@ -10,11 +9,7 @@ const getSheetData = async () => {
     return data.valueRanges[0].values as string[][]
 }
 
-export const load = (() => {
-
-    return {
-        streamed: {
-            sheetTest: getSheetData()
-        }
-    };
-}) satisfies PageServerLoad; */
+export const GET: RequestHandler = async () => {
+    const res = await getSheetData();
+    return new Response(JSON.stringify(res));
+};
