@@ -41,7 +41,9 @@
 				</button>
 			</Youtube>
 		</div>
-		<div class="absolute bottom-0 left-0 right-0 top-0 rotate-3 rounded-xl bg-pink-400" />
+		<div
+			class="absolute bottom-0 left-0 right-0 top-0 rotate-3 rounded-xl bg-pink-400 shadow-2xl"
+		/>
 		<div
 			class="absolute bottom-0 left-0 right-0 top-0 -translate-x-2 -translate-y-2 rotate-3 rounded-xl bg-green-400"
 		/>
