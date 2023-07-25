@@ -26,7 +26,7 @@
 	class="relative mx-auto mt-8 flex flex-col items-center justify-center gap-x-4 gap-y-6 px-4 md:max-w-full md:flex-row lg:max-w-6xl"
 >
 	<div
-		class="relative -z-10 mx-2 mt-4 flex w-[80vw] items-center justify-center p-4 md:max-w-sm lg:max-w-lg"
+		class="relative -z-10 mx-2 mt-4 flex w-[90vw] items-center justify-center p-4 md:max-w-sm lg:max-w-lg"
 	>
 		<div class="z-20 p-2 md:p-4 lg:p-6">
 			<Youtube
@@ -52,10 +52,10 @@
 		/>
 	</div>
 	<div
-		class="relative mt-4 flex w-[75vw] flex-col items-center justify-center rounded-lg bg-yellow-300 p-4 font-lato font-bold text-pink-600 shadow-2xl md:max-w-xs"
+		class="relative mt-4 flex w-[85vw] flex-col items-center justify-center rounded-lg bg-yellow-300 p-4 font-lato font-bold text-pink-600 shadow-2xl md:max-w-xs"
 	>
 		<img src={closeEyesFace} class="h-16 w-16" alt="Closed eyes band logo" />
-		<p class="text-justifed text-xl leading-loose">
+		<p class="text-justifed text-lg leading-loose lg:text-xl">
 			Get in touch via <a
 				class="inline-flex items-end justify-end align-bottom text-purple-600 underline hover:text-purple-400"
 				href="mailto:wakingnapster@gmail.com0"
