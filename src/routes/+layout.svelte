@@ -5,8 +5,8 @@
 	import logo from '$lib/assets/WkngNpstr_03_open.svg';
 	import altLogo from '$lib/assets/WkngNpstr_01_closed(1).svg';
 	import Nav from '$lib/components/Nav.svelte';
-	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte';
+	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
