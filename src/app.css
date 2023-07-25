@@ -54,7 +54,8 @@ a, button {
     }
 
     div[class*="you__tube"] > img {
-        @apply rounded-md !important;
+        border-width: 8px;
+        @apply border-blue-300 !important;
     }
 
     .fc-list-day {
@@ -64,7 +65,17 @@ a, button {
 @layer components {
     
 
-    iframe {
-        @apply rounded-md flex-grow flex-shrink-0 !important;
+    iframe, video {
+        @apply flex-grow flex-shrink-0 h-full w-full !important;
+        border-width: 8px;
+        @apply border-blue-300 !important;
+    }
+}
+
+@layer utilities {
+    .shadow-no-blur {
+        border: solid 8px;
+        @apply border-pink-500;
+        box-shadow: 8px 8px 0 black;
     }
 }

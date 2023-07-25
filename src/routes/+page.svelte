@@ -23,39 +23,36 @@
 	</div>
 </div>
 <div
-	class="relative mx-auto mt-8 flex flex-col items-center justify-center gap-x-4 gap-y-6 px-4 md:max-w-full md:flex-row lg:max-w-6xl"
+	class="relative -z-10 mx-auto mt-4 flex flex-col items-center justify-center gap-x-2 gap-y-2 p-4 md:max-w-full md:flex-row md:justify-around lg:max-w-full"
 >
 	<div
-		class="relative -z-10 mx-2 mt-4 flex w-[90vw] items-center justify-center p-4 md:max-w-sm lg:max-w-lg"
+		class="relative -z-10 mt-2 flex max-w-[min(95vw,48rem)] flex-shrink flex-grow -rotate-1 items-center justify-center p-2"
 	>
-		<div class="z-20 p-2 md:p-4 lg:p-6">
+		<div class="z-20 h-full w-full p-2 md:p-4 lg:p-6">
 			<Youtube
 				id="1ep1KKOEX0Q"
 				--title-color="white"
 				--title-shadow-color="rgb(129, 140, 248)"
 				--title-font-family="Chewy"
 			>
-				<button
-					class="h-24 w-24 rounded-full bg-indigo-400 text-pink-200 transition-all hover:scale-110 hover:bg-pink-200 hover:text-indigo-400"
-					><MdPlayCircleOutline />
-				</button>
+				<div class="h-16 w-16 rounded-full bg-white text-pink-600 transition-all hover:scale-110">
+					<MdPlayCircleOutline />
+				</div>
 			</Youtube>
 		</div>
+		<!-- <div class="absolute bottom-0 left-0 right-0 top-0 rotate-3 bg-pink-400 shadow-2xl" /> -->
+		<!-- <div
+			class="absolute bottom-0 left-0 right-0 top-0 -translate-x-2 -translate-y-2 rotate-3 bg-green-400"
+		/> -->
 		<div
-			class="absolute bottom-0 left-0 right-0 top-0 rotate-3 rounded-xl bg-pink-400 shadow-2xl"
-		/>
-		<div
-			class="absolute bottom-0 left-0 right-0 top-0 -translate-x-2 -translate-y-2 rotate-3 rounded-xl bg-green-400"
-		/>
-		<div
-			class="absolute bottom-2 left-2 right-2 top-2 -translate-x-1 -rotate-1 rounded-xl bg-indigo-300"
+			class="absolute bottom-2 left-2 right-2 top-2 flex-shrink flex-grow -translate-x-1 bg-green-300"
 		/>
 	</div>
 	<div
-		class="relative mt-4 flex w-[85vw] flex-col items-center justify-center rounded-lg bg-yellow-300 p-4 font-lato font-bold text-pink-600 shadow-2xl md:max-w-xs"
+		class="shadow-no-blur relative mt-2 flex w-[85vw] max-w-[min(85vw,32rem)] flex-col items-center justify-center bg-yellow-300 p-4 font-lato font-bold text-pink-600 shadow-black"
 	>
 		<img src={closeEyesFace} class="h-16 w-16" alt="Closed eyes band logo" />
-		<p class="text-justifed text-lg leading-loose lg:text-xl">
+		<p class="text-justifed leading-loose lg:text-xl">
 			Get in touch via <a
 				class="inline-flex items-end justify-end align-bottom text-purple-600 underline hover:text-purple-400"
 				href="mailto:wakingnapster@gmail.com0"

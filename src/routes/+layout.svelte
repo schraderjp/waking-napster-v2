@@ -36,7 +36,7 @@
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-<div class="container relative mx-auto flex flex-col items-center justify-center pt-2">
+<div class="relative mx-auto flex flex-col items-center justify-center pt-2 lg:container">
 	<header class="flex justify-center gap-x-12">
 		<img
 			on:focus={() => (hovering = true)}
@@ -71,7 +71,9 @@
 		</div>
 	</header>
 	{#key pathname}
-		<main in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}><slot /></main>
+		<main class="z-0" in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}>
+			<slot />
+		</main>
 	{/key}
 </div>
 {#key pathname}
