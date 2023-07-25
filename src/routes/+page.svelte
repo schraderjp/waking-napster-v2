@@ -19,7 +19,7 @@
 		class="banner absolute bottom-0 left-0 right-0 top-0 flex h-full items-center rounded-lg bg-gray-700 bg-opacity-50 p-8 font-chewy text-yellow-400 xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
 	>
 		<img class="h-3/4" src={wakingNapster} alt="Waking Napster large logo" />
-		<p class="text-sx text-center">Playing your favorite pirated songs from the 90's</p>
+		<p class="text-sx text-center">Playing your favorite pirated songs from the 90's and beyond</p>
 	</div>
 </div>
 <div
