@@ -5,7 +5,7 @@
 </script>
 
 <nav
-	class="fixed bottom-0 left-0 top-0 z-40 flex w-screen flex-col items-center justify-around gap-x-4 rounded-md bg-yellow-200 pt-4 text-2xl md:relative md:w-max md:flex-row md:bg-inherit md:text-3xl"
+	class="lg-text-3xl fixed bottom-0 left-0 top-0 z-40 flex w-screen flex-col items-center justify-around gap-x-4 rounded-md bg-yellow-200 pt-4 text-2xl md:relative md:w-max md:flex-row md:bg-inherit lg:text-4xl"
 >
 	<a
 		on:click

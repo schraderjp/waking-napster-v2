@@ -38,6 +38,9 @@ input:not(:placeholder-shown):invalid {
     @apply border-2 border-red-600;
 }
 
+/* div.banner {
+    backdrop-filter: blur(6px);
+} */
 
 
 a, button {

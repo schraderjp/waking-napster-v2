@@ -36,7 +36,7 @@
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-<div class="container relative mx-auto flex flex-col px-4 pt-2">
+<div class="container relative mx-auto flex flex-col items-center justify-center pt-2">
 	<header class="flex justify-center gap-x-12">
 		<img
 			on:focus={() => (hovering = true)}
@@ -46,6 +46,7 @@
 			width="200"
 			src={hovering ? altLogo : logo}
 			alt="Waking Napster logo"
+			class="h-full w-48"
 		/>
 		<div class="hidden md:flex">
 			<Nav on:click={() => (open = !open)} />
@@ -79,37 +80,37 @@
 		out:fade={{ duration: 50 }}
 		class="mt-auto flex flex-col items-center justify-center gap-4 py-8"
 	>
-		<div class="flex h-14 items-center justify-center gap-x-4">
+		<div class="flex h-8 items-center justify-center gap-x-4">
 			<a
-				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="flex h-8 w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://www.facebook.com/wakingnapster/"
 			>
 				<FaFacebook />
 				<span class="sr-only">Facebook</span></a
 			>
 			<a
-				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://www.instagram.com/waking_napster/?hl=en"
 			>
 				<FaInstagram />
 				<span class="sr-only">Instagram</span></a
 			>
 			<a
-				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://www.youtube.com/channel/UCKQjTyWs0zUaTXDL---ovLg"
 			>
 				<FaYoutube />
 				<span class="sr-only">YouTube</span></a
 			>
 			<a
-				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://soundcloud.com/waking-napster"
 			>
 				<FaSoundcloud />
 				<span class="sr-only">Soundcloud</span></a
 			>
 			<a
-				class="flex h-14 w-14 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="mailto:wakingnapster@gmail.com"
 			>
 				<MdEmail />
