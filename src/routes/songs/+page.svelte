@@ -14,7 +14,7 @@
 </svelte:head>
 <div class="relative z-10 flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Our Song List</h1>
-	<div class="relative w-[min(90vw,46rem)] overflow-x-auto shadow-2xl">
+	<div class="relative w-[min(90vw,46rem)] overflow-x-auto">
 		{#await fetchSheetData()}
 			<div class="mx-auto mt-8 flex w-16 animate-bounce items-center justify-center">
 				<img src={smallLogo} alt="Logo loading indicator" />
