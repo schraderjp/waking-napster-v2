@@ -23,7 +23,7 @@
 	</div>
 </div>
 <div
-	class="relative -z-10 mx-auto mt-4 flex flex-col items-center justify-center gap-x-2 gap-y-2 p-4 md:max-w-full md:flex-row md:justify-around lg:max-w-full"
+	class="relative -z-10 mx-auto flex flex-col items-center justify-center gap-x-2 gap-y-2 p-4 md:max-w-full md:flex-row md:justify-around lg:max-w-full"
 >
 	<div
 		class="relative -z-10 mt-2 flex max-w-[min(95vw,48rem)] flex-shrink flex-grow -rotate-1 items-center justify-center p-2"
