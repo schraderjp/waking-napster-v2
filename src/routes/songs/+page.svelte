@@ -21,14 +21,14 @@
 			</div>
 		{:then items}
 			<table
-				class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces rounded-lg border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
+				class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
 			>
 				<thead>
-					<tr class="rounded-lg sm:text-base">
-						<th class="rounded-tl-lg">Title</th>
+					<tr class="sm:text-base">
+						<th class="">Title</th>
 						<th>Artist</th>
 						<th>Genre</th>
-						<th class="rounded-tr-lg">Year</th>
+						<th class="">Year</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -88,16 +88,16 @@
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
 
-<div>
+<div class="px-4 lg:p-0">
 	<div class="flex flex-col items-center justify-center">
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 	</div>
 	<div
-		class="relative mx-auto mt-4 max-w-3xl rounded-lg bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:rounded-lg before:bg-pink-400"
+		class="before: relative mx-auto mt-4 max-w-3xl bg-blue-200 p-4 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:bg-pink-400"
 		id="calendar"
 	/>
 	<dialog
-		class="max-w-[min(70ch,90vw)] rounded-lg bg-pink-200 font-lato shadow-lg backdrop-filter"
+		class="max-w-[min(70ch,90vw)] bg-pink-200 font-lato shadow-lg backdrop-filter"
 		bind:this={dialog}
 	>
 		<button class="float-right h-10 w-10 p-2" on:click={() => dialog.close()}><MdClose /></button>

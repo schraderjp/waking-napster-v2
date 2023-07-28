@@ -6,19 +6,19 @@
 	<title>Waking Napster - Contact Us</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<div>
+<div class="w-[min(100vw,600px)] px-4">
 	<div class="flex items-center justify-center">
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Contact Us</h1>
 	</div>
 	<form
-		class="mx-auto flex max-w-md flex-col gap-y-4 font-chewy text-xl text-purple-600"
+		class="mx-auto flex w-full flex-col gap-y-4 font-chewy text-xl text-purple-600"
 		name="contact"
 		method="POST"
 		data-netlify="true"
 		action="/contact/success"
 	>
-		<div class="flex gap-x-4">
-			<div class="flex flex-col">
+		<div class="flex w-full flex-col gap-x-4 gap-y-4 xs:flex-row">
+			<div class="flex flex-col xs:w-1/2">
 				<label for="first-name">First Name</label>
 				<input
 					placeholder="First Name"
@@ -29,7 +29,7 @@
 					id="first-name"
 				/>
 			</div>
-			<div class="flex flex-col">
+			<div class="flex flex-col xs:w-1/2">
 				<label for="last-name">Last Name</label>
 				<input
 					class="w-full rounded-md"
