@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/anybody": "^5.0.6",
 		"@fontsource/chewy": "^5.0.5",
 		"@fontsource/lato": "^5.0.5",
 		"@fullcalendar/common": "^5.11.5",

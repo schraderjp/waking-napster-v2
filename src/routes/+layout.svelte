@@ -2,6 +2,7 @@
 	import '../app.css';
 	import '@fontsource/chewy';
 	import '@fontsource/lato';
+	import '@fontsource-variable/anybody';
 	import logo from '$lib/assets/WkngNpstr_03_open.svg';
 	import altLogo from '$lib/assets/WkngNpstr_01_closed(1).svg';
 	import Nav from '$lib/components/Nav.svelte';
@@ -46,7 +47,7 @@
 			width="200"
 			src={hovering ? altLogo : logo}
 			alt="Waking Napster logo"
-			class="h-full w-48"
+			class="h-full w-36 xs:w-48"
 		/>
 		<div class="hidden md:flex">
 			<Nav on:click={() => (open = !open)} />
@@ -71,7 +72,11 @@
 		</div>
 	</header>
 	{#key pathname}
-		<main class="z-0" in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}>
+		<main
+			class="z-0 max-w-[100vw]"
+			in:fade={{ duration: 100, delay: 100 }}
+			out:fade={{ duration: 100 }}
+		>
 			<slot />
 		</main>
 	{/key}
@@ -91,28 +96,28 @@
 				<span class="sr-only">Facebook</span></a
 			>
 			<a
-				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="flex h-8 w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://www.instagram.com/waking_napster/?hl=en"
 			>
 				<FaInstagram />
 				<span class="sr-only">Instagram</span></a
 			>
 			<a
-				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="flex h-8 w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://www.youtube.com/channel/UCKQjTyWs0zUaTXDL---ovLg"
 			>
 				<FaYoutube />
 				<span class="sr-only">YouTube</span></a
 			>
 			<a
-				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="flex h-8 w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="https://soundcloud.com/waking-napster"
 			>
 				<FaSoundcloud />
 				<span class="sr-only">Soundcloud</span></a
 			>
 			<a
-				class="h--8 flex w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
+				class="flex h-8 w-8 items-center justify-center text-blue-500 transition-transform hover:scale-125 hover:text-purple-400"
 				href="mailto:wakingnapster@gmail.com"
 			>
 				<MdEmail />
