@@ -93,7 +93,7 @@
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 	</div>
 	<div
-		class="before: relative mx-auto mt-4 max-w-3xl bg-blue-200 p-2 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:bg-pink-400 xs:p-3 sm:p-4"
+		class="before: relative mx-auto mt-4 min-w-xs max-w-3xl bg-blue-200 p-2 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:bg-pink-400 xs:p-3 sm:p-4"
 		id="calendar"
 	/>
 	<dialog
