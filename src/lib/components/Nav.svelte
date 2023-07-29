@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 
 	// export let open: boolean;
 </script>
 
 <nav
-	class="lg-text-3xl fixed bottom-0 left-0 top-0 z-40 flex w-screen flex-col items-center justify-around gap-x-4 rounded-md bg-yellow-200 pt-4 text-2xl md:relative md:w-max md:flex-row md:bg-inherit lg:text-4xl"
+	in:fly={{ x: 0, y: -100 }}
+	out:fly={{ x: 0, y: -100 }}
+	class="lg-text-3xl fixed left-0 top-0 z-40 flex w-screen flex-col items-center justify-around gap-x-4 gap-y-2 rounded-md bg-yellow-200 pb-2 pt-4 text-2xl shadow-md md:relative md:w-max md:flex-row md:bg-inherit md:shadow-none lg:text-4xl"
 >
 	<a
 		on:click

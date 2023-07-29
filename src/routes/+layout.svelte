@@ -38,7 +38,7 @@
 
 <svelte:window bind:innerWidth={screenSize} />
 <div class="relative mx-auto flex flex-col items-center justify-center pt-2 lg:container">
-	<header class="flex justify-center gap-x-12">
+	<header class="flex w-screen justify-center gap-x-12">
 		<img
 			on:focus={() => (hovering = true)}
 			on:blur={() => (hovering = false)}
