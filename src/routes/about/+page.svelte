@@ -40,12 +40,12 @@
 		<div class="flex flex-col items-center justify-center px-4 lg:flex-row" in:fade>
 			<img
 				class="h-full w-[min(90vw,36rem)]"
-				in:fly={{ delay: 100, x: 0, y: 50 }}
+				in:fly|global={{ delay: 100, x: 0, y: 50 }}
 				src={logo}
 				alt="Waking Napster Logo"
 			/>
 			<p
-				in:fly={{ delay: 250, x: 0, y: 50 }}
+				in:fly|global={{ delay: 250, x: 0, y: 50 }}
 				class=" max-w-[60ch] px-8 font-lato leading-relaxed text-gray-800 sm:text-xl"
 			>
 				Waking Napster is a group of people that have enjoyed entertaining people all over the
