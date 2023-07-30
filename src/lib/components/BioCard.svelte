@@ -14,7 +14,7 @@
 				: 'md:float-right md:ml-4 lg:order-2 lg:float-none lg:mr-0'
 		} md:mb-2  md:w-60`}
 	>
-		<img class="" src={imgSrc} alt={name} height="760" width="720" />
+		<img class="" src={imgSrc} alt={name} height="380" width="360" />
 		<h2
 			class="absolute left-0 right-0 top-0 bg-black bg-opacity-60 py-2 text-center font-chewy text-3xl text-wn-yellow"
 		>
