@@ -70,7 +70,7 @@
 		{:else if (activeTab = 'members')}
 			<div in:fade class="mt-2 w-full">
 				<ul class="mx-auto flex flex-col items-center justify-center pt-2">
-						<li class="flex w-full items-start justify-center">
+						<li class="flex w-full items-center justify-center">
 							<BioCard name="Aubrey" imgSrc={aubreyPhoto}
 								>Aubrey (Acoustic Aubrey) started playing classical guitar at 15 years old and
 								participated in jazz bands, bluegrass jams, and developed a regionally known jazz
