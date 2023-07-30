@@ -2,7 +2,7 @@
 	import Youtube from 'svelte-youtube-embed';
 	import MdPlayCircleOutline from 'svelte-icons/md/MdPlayCircleOutline.svelte';
 	import mobileBanner from '$lib/assets/wn mobile banner.png';
-	import desktopBanner from '$lib/assets/wn desktop banner 2.png';
+	import desktopBanner from '$lib/assets/desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1600.png';
 	import closeEyesFace from '$lib/assets/WakingNapster6_01_closed.png';
 	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
@@ -18,9 +18,55 @@
 </svelte:head>
 <TransitionOnMount>
 	<div class="relative mx-auto mt-4 flex w-full items-center justify-center">
-		<img in:fade class="md:hidden" src={mobileBanner} alt="Main Banner" />
+		<img
+			srcset="
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_320.png 320w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_369.png 369w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_410.png 410w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_453.png 453w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_495.png 495w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_528.png 528w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_565.png 565w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_600.png 600w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_631.png 631w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_665.png 665w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_693.png 693w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_729.png 729w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_757.png 757w,
+		mobile-banner/wn_mobile_banner_sijuoa_c_scale,w_760.png 760w"
+			in:fade
+			class="md:hidden"
+			src={mobileBanner}
+			alt="Main Banner"
+		/>
 
-		<img in:fade class="hidden md:block" src={desktopBanner} alt="Main Banner" />
+		<img
+			in:fade
+			class="hidden md:block"
+			src={desktopBanner}
+			alt="Main Banner"
+			srcset="
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_320.png 320w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_452.png 452w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_560.png 560w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_657.png 657w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_748.png 748w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_828.png 828w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_901.png 901w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_967.png 967w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1024.png 1024w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1096.png 1096w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1153.png 1153w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1219.png 1219w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1284.png 1284w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1335.png 1335w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1383.png 1383w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1437.png 1437w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1496.png 1496w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1545.png 1545w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1598.png 1598w,
+		desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1600.png 1600w"
+		/>
 		<p
 			in:fade={{ delay: 100 }}
 			class="absolute bottom-0 left-0 right-0 w-full bg-black bg-opacity-70 px-2 py-2 text-center font-chewy text-2xl text-yellow-300"

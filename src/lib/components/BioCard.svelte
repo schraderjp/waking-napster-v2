@@ -1,11 +1,12 @@
 <script lang="ts">
 	export let imgSrc: string;
 	export let name: string;
+	export let srcSet: string = '';
 	export let position: 'left' | 'right' = 'left';
 </script>
 
 <div
-	class="mx-auto flex w-full flex-col items-center justify-center px-4 py-4 md:block lg:flex lg:flex-row lg:items-center lg:justify-around"
+	class="mx-auto flex max-w-max flex-col items-center justify-center px-4 py-4 md:block lg:flex lg:flex-row lg:items-center lg:justify-center"
 >
 	<div
 		class={`photo-card relative mx-auto border-[8px] border-wn-dark-blue shadow-wn-orange xs:w-72 sm:w-96 lg:w-1/3 ${
@@ -14,7 +15,7 @@
 				: 'md:float-right md:ml-4 lg:order-2 lg:float-none lg:mr-0'
 		} md:mb-2  md:w-60`}
 	>
-		<img class="" src={imgSrc} alt={name} height="380" width="360" />
+		<img width="720" height="760" class="" srcset={srcSet} src={imgSrc} alt={name} />
 		<h2
 			class="absolute left-0 right-0 top-0 bg-black bg-opacity-60 py-2 text-center font-chewy text-3xl text-wn-yellow"
 		>

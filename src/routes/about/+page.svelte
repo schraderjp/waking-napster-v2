@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/assets/WakingNapster.png';
+	import logo from '$lib/assets/WakingNapster.svg';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
 	import { blur, fade, fly, slide } from 'svelte/transition';
 	import aubreyPhoto from '$lib/assets/aubrey-bio.jpeg';
@@ -8,7 +8,7 @@
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
 	import BioCard from '$lib/components/BioCard.svelte';
 
-	let activeTab: string = 'band';
+	let activeTab: string = 'members';
 </script>
 
 <svelte:head>
@@ -47,13 +47,20 @@
 		{#if activeTab === 'band'}
 			<div class="flex flex-col items-center justify-center px-4 pt-4 lg:flex-row" in:fade>
 				<img
-					width="1800"
-					height="1620"
-					class="lg:1/3 h-full w-full sm:w-2/3"
 					in:fly|global={{ delay: 100, x: 0, y: 50 }}
+					srcset="
+					logo/WakingNapster_no2zya_c_scale,w_320.png 320w,
+					logo/WakingNapster_no2zya_c_scale,w_598.png 598w,
+					logo/WakingNapster_no2zya_c_scale,w_817.png 817w,
+					logo/WakingNapster_no2zya_c_scale,w_1012.png 1012w,
+					logo/WakingNapster_no2zya_c_scale,w_1184.png 1184w,
+					logo/WakingNapster_no2zya_c_scale,w_1353.png 1353w,
+					logo/WakingNapster_no2zya_c_scale,w_1600.png 1600w"
+					class="lg:1/3 h-full w-full max-w-md sm:w-2/3"
 					src={logo}
 					alt="Waking Napster Logo"
 				/>
+
 				<p
 					in:fly|global={{ delay: 250, x: 0, y: 50 }}
 					class=" max-w-[60ch] px-2 font-anybody leading-loose text-gray-800 sm:text-lg sm:leading-loose"
@@ -71,7 +78,13 @@
 			<div in:fade class="mt-2 w-full">
 				<ul class="mx-auto flex flex-col items-center justify-center pt-2">
 					<li class="">
-						<BioCard name="Aubrey" imgSrc={aubreyPhoto}
+						<BioCard
+							srcSet="
+						bio-photos/aubrey-bio_pggtjj_c_scale,w_320.jpg 320w,
+						bio-photos/aubrey-bio_pggtjj_c_scale,w_592.jpg 592w,
+						bio-photos/aubrey-bio_pggtjj_c_scale,w_760.jpg 760w"
+							name="Aubrey"
+							imgSrc={aubreyPhoto}
 							>Aubrey (Acoustic Aubrey) started playing classical guitar at 15 years old and
 							participated in jazz bands, bluegrass jams, and developed a regionally known jazz trio
 							that was renown for swing and hired by UVA for swing dances. As much fun as playing
@@ -84,7 +97,7 @@
 							or hanging with the family. He is not a fan of a certain roast beef selling company
 							that he doesn’t want to mention for fear of being sued.
 						</BioCard>
-						<hr class="mx-4 rounded-xl border-2 border-orange-400" />
+						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
 					</li>
 					<li class="">
 						<BioCard position="right" imgSrc={davePhoto} name="Dave">
@@ -100,7 +113,7 @@
 							dystopian landscape, so he is actively trying to befriend every electronic device to gain
 							the robots’ trust.
 						</BioCard>
-						<hr class="mx-4 rounded-xl border-2 border-orange-400" />
+						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
 					</li>
 
 					<li class="">
@@ -116,10 +129,20 @@
 							with her band bros, she is spending time with her super cool family or getting a combo
 							meal at Arby’s.
 						</BioCard>
-						<hr class="mx-4 rounded-xl border-2 border-orange-400" />
+						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
 					</li>
 					<li class="pt-8 md:pt-0">
-						<BioCard position="right" imgSrc={jayPhoto} name="Jay">
+						<BioCard
+							srcSet="
+						bio-photos/jay-bio_m53kau_c_scale,w_320.jpg 320w,
+						bio-photos/jay-bio_m53kau_c_scale,w_492.jpg 492w,
+						bio-photos/jay-bio_m53kau_c_scale,w_633.jpg 633w,
+						bio-photos/jay-bio_m53kau_c_scale,w_754.jpg 754w,
+						bio-photos/jay-bio_m53kau_c_scale,w_760.jpg 760w"
+							position="right"
+							imgSrc={jayPhoto}
+							name="Jay"
+						>
 							Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
 							craft in between lighting bottle rockets and doing ollies with his friends.
 						</BioCard>
