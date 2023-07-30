@@ -123,8 +123,7 @@
 								Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
 								craft in between lighting bottle rockets and doing ollies with his friends.
 							</BioCard>
-						</li></Saos
-					>
+						</li>
 				</ul>
 			</div>
 		{/if}
