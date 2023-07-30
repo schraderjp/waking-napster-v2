@@ -15,7 +15,6 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@tailwindcss/forms": "^0.5.4",
-		"@zerodevx/svelte-img": "^1.2.11",
 		"autoprefixer": "^10.4.14",
 		"postcss": "^8.4.26",
 		"prettier": "^2.8.8",
