@@ -67,6 +67,13 @@ wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
 				<div class="h-16 w-16 rounded-full bg-white text-pink-600 transition-all hover:scale-110">
 					<MdPlayCircleOutline />
 				</div>
+				<img
+					width="1280"
+					height="720"
+					slot="thumbnail"
+					src="maxresdefault.webp"
+					alt="youttube thumbnail"
+				/>
 			</Youtube>
 		</div>
 	</div>
