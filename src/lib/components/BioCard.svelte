@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="flex w-full flex-col items-start justify-center px-4 py-4 md:block lg:mx-auto lg:flex lg:flex-row lg:items-center lg:justify-around"
+	class="flex w-full flex-col items-center justify-center px-4 py-4 md:block lg:mx-auto lg:flex lg:flex-row lg:items-center lg:justify-around"
 >
 	<div
 		class={`photo-card relative mx-auto border-[8px] border-wn-dark-blue shadow-wn-orange xs:w-72 sm:w-96 lg:w-1/3 ${
