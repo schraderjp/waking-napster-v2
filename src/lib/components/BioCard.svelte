@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	export let imgSrc: string;
 	export let name: string;
 	export let srcSet: string = '';
@@ -7,7 +7,7 @@
 </script>
 
 <div
-	in:fly|global={{ delay: 100, x: position === 'left' ? 100 : -100 }}
+	in:fade|global={{ delay: 100 }}
 	class="mx-auto flex max-w-max flex-col items-center justify-center px-4 py-4 md:block lg:flex lg:flex-row lg:items-center lg:justify-center"
 >
 	<div

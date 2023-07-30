@@ -14,7 +14,7 @@
 	let daveElement: HTMLElement;
 	let jayElement: HTMLElement;
 
-	let activeTab: string = 'band';
+	let activeTab: string = 'members';
 </script>
 
 <svelte:head>
