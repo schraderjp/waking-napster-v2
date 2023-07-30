@@ -21,12 +21,12 @@
 	<img
 		loading="eager"
 		srcset="
-		wn_mobile_banner_f28rik_c_scale,w_320.webp 320w,
-		wn_mobile_banner_f28rik_c_scale,w_486.webp 486w,
-		wn_mobile_banner_f28rik_c_scale,w_624.webp 624w,
-		wn_mobile_banner_f28rik_c_scale,w_722.webp 722w,
-		wn_mobile_banner_f28rik_c_scale,w_760.webp 760w"
-		src="wn_mobile_banner_f28rik_c_scale,w_760.webp"
+wn_mobile_banner_bxda0x_c_scale,w_320.webp 320w,
+wn_mobile_banner_bxda0x_c_scale,w_477.webp 477w,
+wn_mobile_banner_bxda0x_c_scale,w_567.webp 567w,
+wn_mobile_banner_bxda0x_c_scale,w_685.webp 685w,
+wn_mobile_banner_bxda0x_c_scale,w_760.webp 760w"
+		src="wn_mobile_banner_bxda0x_c_scale,w_760.webp"
 		in:fade
 		class="min-h-[20rem] md:hidden"
 		alt="Main Banner"
@@ -42,15 +42,12 @@
 		class="hidden min-h-[16rem] md:block"
 		alt="Main Banner"
 		srcset="
-wn_desktop_banner_2_v9vojv_c_scale,w_760.webp 760w,
-wn_desktop_banner_2_v9vojv_c_scale,w_906.webp 906w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1163.webp 1163w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1377.webp 1377w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1593.webp 1593w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1866.webp 1866w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1919.webp 1919w,
-wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp 1920w"
-		src="wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp"
+wn_desktop_banner_jxrmoc_c_scale,w_760.webp 760w,
+wn_desktop_banner_jxrmoc_c_scale,w_1048.webp 1048w,
+wn_desktop_banner_jxrmoc_c_scale,w_1205.webp 1205w,
+wn_desktop_banner_jxrmoc_c_scale,w_1488.webp 1488w,
+wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
+		src="wn_desktop_banner_jxrmoc_c_scale,w_1600.webp"
 	/>
 	<p
 		in:fade={{ delay: 100 }}
@@ -85,7 +82,7 @@ wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp 1920w"
 			<strong class="font-chewy text-xl font-bold xs:text-2xl lg:text-3xl">Get in Touch:</strong>
 			<p class="mt-2">
 				<a
-					class="inline-flex items-center font-lato text-lg text-purple-600 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+					class="inline-flex items-center font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
 					href="/contact"
 				>
 					<span
@@ -106,7 +103,7 @@ wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp 1920w"
 			<ul class="mt-2 flex flex-col items-start justify-center gap-y-4">
 				<li>
 					<a
-						class="inline-flex items-center align-bottom font-lato text-lg text-purple-600 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+						class="inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
 						href="https://www.youtube.com/@wakingnapster/videos"
 						><span
 							class="mx-1 my-auto inline-flex h-8 w-8 items-center justify-center sm:h-10 sm:w-10 lg:h-12 lg:w-12"
@@ -117,7 +114,7 @@ wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp 1920w"
 				</li>
 				<li>
 					<a
-						class=" inline-flex items-center align-bottom font-lato text-lg text-purple-600 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+						class=" inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
 						href="https://www.facebook.com/wakingnapster"
 						><span
 							class="mx-1 my-auto inline-flex h-8 w-8 items-center justify-center sm:h-10 sm:w-10 lg:h-12 lg:w-12"
