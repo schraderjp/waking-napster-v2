@@ -39,6 +39,7 @@
 		"@fullcalendar/daygrid": "^6.1.8",
 		"@fullcalendar/google-calendar": "^6.1.8",
 		"@fullcalendar/list": "^6.1.8",
+		"@svelte-put/clickoutside": "^3.0.0",
 		"@sveltejs/adapter-netlify": "^2.0.8",
 		"googleapis": "^122.0.0",
 		"svelte-icons": "^2.1.0"

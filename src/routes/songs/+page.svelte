@@ -1,11 +1,14 @@
 <script lang="ts">
 	import smallLogo from '$lib/assets/WakingNapster6_03_open.png';
+	import { fade } from 'svelte/transition';
 	const fetchSheetData = async () => {
 		const res = await fetch('/songs/api');
 		const songs = await res.json();
 
 		return songs;
 	};
+
+	let visible = false;
 </script>
 
 <svelte:head>
@@ -16,36 +19,45 @@
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Our Song List</h1>
 	<div class="relative w-[min(90vw,46rem)] overflow-x-auto">
 		{#await fetchSheetData()}
-			<div class="mx-auto mt-8 flex w-16 animate-bounce items-center justify-center">
+			<div
+				in:fade
+				out:fade={{ duration: 50 }}
+				on:introstart={() => (visible = false)}
+				on:outroend={() => (visible = true)}
+				class="mx-auto mt-8 flex w-16 animate-bounce items-center justify-center"
+			>
 				<img src={smallLogo} alt="Logo loading indicator" />
 			</div>
 		{:then items}
-			<table
-				class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
-			>
-				<thead>
-					<tr class="sm:text-base">
-						<th class="">Title</th>
-						<th>Artist</th>
-						<th>Genre</th>
-						<th class="">Year</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#if items}
-						{#each items as song}
-							<tr>
-								<td>{song[0] ? song[0] : ''}</td>
-								<td>{song[1] ? song[1] : ''}</td>
-								<td>{song[2] ? song[2] : ''}</td>
-								<td>{song[3] ? song[3] : ''}</td>
-							</tr>
-						{/each}
-					{/if}
-				</tbody>
-			</table>
+			{#if visible}
+				<table
+					in:fade={{ delay: 100 }}
+					class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
+				>
+					<thead>
+						<tr class="sm:text-base">
+							<th class="">Title</th>
+							<th>Artist</th>
+							<th>Genre</th>
+							<th class="">Year</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#if items}
+							{#each items as song}
+								<tr>
+									<td>{song[0] ? song[0] : ''}</td>
+									<td>{song[1] ? song[1] : ''}</td>
+									<td>{song[2] ? song[2] : ''}</td>
+									<td>{song[3] ? song[3] : ''}</td>
+								</tr>
+							{/each}
+						{/if}
+					</tbody>
+				</table>
+			{/if}
 		{:catch error}
-			{error}
+			<p transition:fade class="red-500">Something went wrong! Please try again later.</p>
 		{/await}
 	</div>
 </div>

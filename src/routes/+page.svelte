@@ -7,21 +7,16 @@
 	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
-	import { blur, fade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-
-	let visible: boolean = false;
-
-	onMount(() => {
-		visible = true;
-	});
+	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
 </script>
 
 <svelte:head>
 	<title>Waking Napster</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-{#if visible}
+<TransitionOnMount>
 	<div class="relative mx-auto mt-4 flex w-full items-center justify-center">
 		<img in:fade class="md:hidden" src={mobileBanner} alt="Main Banner" />
 
@@ -52,7 +47,7 @@
 		</div>
 		<div
 			in:fade={{ delay: 250 }}
-			class="shadow-no-blur relative m-2 flex min-w-max w-[85vw] flex-col items-start gap-x-2 gap-y-2 rounded-lg bg-wn-yellow p-4 text-left font-lato text-lg font-bold leading-loose text-pink-600 shadow-black xs:flex-row xs:text-xl md:max-w-xs md:flex-col lg:max-w-sm lg:text-2xl xl:max-w-md"
+			class="shadow-no-blur relative m-2 flex w-[85vw] min-w-max flex-col items-start gap-x-2 gap-y-2 rounded-lg bg-wn-yellow p-4 text-left font-lato text-lg font-bold leading-loose text-pink-600 shadow-black xs:flex-row xs:text-xl md:max-w-xs md:flex-col lg:max-w-sm lg:text-2xl xl:max-w-md"
 		>
 			<!-- <img src={closeEyesFace} class="h-full w-24 p-2" alt="Closed eyes band logo" /> -->
 			<div>
@@ -104,7 +99,7 @@
 			</div>
 		</div>
 	</div>
-{/if}
+</TransitionOnMount>
 
 <style>
 </style>

@@ -12,6 +12,7 @@
 	import listPlugin from '@fullcalendar/list';
 	import { browser } from '$app/environment';
 	import MdClose from 'svelte-icons/md/MdClose.svelte';
+	import { fade } from 'svelte/transition';
 
 	let dialog: HTMLDialogElement;
 	let dialogInfo: DialogData = {
@@ -75,9 +76,23 @@
 		calendar.render();
 	}
 
+	function closeModalOnOutsideClick(e: MouseEvent) {
+		const dialogDimensions = dialog.getBoundingClientRect();
+		if (
+			e.clientX < dialogDimensions.left ||
+			e.clientX > dialogDimensions.right ||
+			e.clientY < dialogDimensions.top ||
+			e.clientY > dialogDimensions.bottom
+		) {
+			dialog.close();
+		}
+	}
+
 	onMount(() => {
 		initCalendar();
+		dialog.addEventListener('click', closeModalOnOutsideClick);
 		return () => {
+			dialog.removeEventListener('click', closeModalOnOutsideClick);
 			calendar && calendar.destroy();
 		};
 	});
@@ -88,12 +103,12 @@
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
 
-<div class="px-3 lg:p-0 w-[100vw] max-w-3xl">
-	<div class="flex flex-col items-center justify-center w-full">
+<div class="w-[100vw] max-w-3xl px-3 lg:p-0">
+	<div class="flex w-full flex-col items-center justify-center">
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 	</div>
 	<div
-		class="before: relative mx-auto mt-4 w-[min(90vw,48rem) bg-blue-200 p-2 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:bg-pink-400 xs:p-3 sm:p-4"
+		class="before: w-[min(90vw,48rem) relative mx-auto mt-4 bg-blue-200 p-2 font-lato before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-20 before:w-full before:-translate-x-2 before:-translate-y-2 before:bg-pink-400 xs:p-3 sm:p-4"
 		id="calendar"
 	/>
 	<dialog

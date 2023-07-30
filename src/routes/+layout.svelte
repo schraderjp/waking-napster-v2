@@ -13,12 +13,17 @@
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
-	import { fade } from 'svelte/transition';
+	import { blur, fade } from 'svelte/transition';
+	import { clickoutside } from '@svelte-put/clickoutside';
 
 	let open: boolean = false;
 	let screenSize: number;
 	let hovering = false;
 	export let data;
+
+	function handleClickOutside() {
+		open = false;
+	}
 
 	$: pathname = data.pathname;
 
@@ -50,9 +55,13 @@
 			class="h-full w-36 xs:w-48"
 		/>
 		<div class="hidden md:flex">
-			<Nav on:click={() => (open = !open)} />
+			<Nav on:click={() => (open = false)} />
 		</div>
-		<div class="absolute right-0 top-0 z-40 flex flex-col items-end md:hidden">
+		<div
+			use:clickoutside
+			on:clickoutside={handleClickOutside}
+			class="absolute right-0 top-0 z-40 flex flex-col items-end md:hidden"
+		>
 			<div class={`z-50 flex items-end justify-end ${open ? 'fixed' : ''}`}>
 				<Hamburger
 					--color="#db2777"
@@ -65,19 +74,25 @@
 				/>
 			</div>
 			{#if open}
-				<div in:fade={{ duration: 50 }} out:fade={{ duration: 50, delay: 100 }}>
-					<Nav on:click={() => (open = !open)} />
+				<div>
+					<Nav on:click={() => (open = false)} />
 				</div>
 			{/if}
 		</div>
 	</header>
 	{#key pathname}
 		<main
-			class="z-0 max-w-[100vw]"
+			class={`relative z-0 max-w-[100vw]`}
 			in:fade={{ duration: 100, delay: 100 }}
 			out:fade={{ duration: 100 }}
 		>
 			<slot />
+			{#if open}
+				<div
+					transition:fade={{ duration: 100 }}
+					class="fixed bottom-0 left-0 right-0 top-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm transition-all"
+				/>
+			{/if}
 		</main>
 	{/key}
 </div>
