@@ -6,8 +6,7 @@
 	import davePhoto from '$lib/assets/dave-bio.jpeg';
 	import aliciaPhoto from '$lib/assets/alicia-bio.jpeg';
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
-	import BioCard from '$lib/components/BioCard.svelte';
-	import Saos from 'saos';
+	import BioCard '$lib/components/BioCard.svelte';
 
 	let activeTab: string = 'band';
 </script>
@@ -71,7 +70,6 @@
 		{:else if (activeTab = 'members')}
 			<div in:fade class="mt-2 w-full">
 				<ul class="mx-auto flex flex-col items-center justify-center pt-2">
-					<Saos animation={'from-left 0.5s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 						<li class="flex w-full items-start justify-center">
 							<BioCard name="Aubrey" imgSrc={aubreyPhoto}
 								>Aubrey (Acoustic Aubrey) started playing classical guitar at 15 years old and
@@ -88,8 +86,6 @@
 							</BioCard>
 							<hr class="runded-xl mx-4 border border-orange-400" />
 						</li>
-					</Saos>
-					<Saos animation={'from-right 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 						<li class="flex w-full items-start justify-center">
 							<BioCard position="right" imgSrc={davePhoto} name="Dave">
 								Dave is the backbone of Waking Napster. Besides being a drummer of countless styles,
@@ -106,9 +102,8 @@
 							</BioCard>
 							<hr class="mx-4 rounded-xl border border-orange-400" />
 						</li>
-					</Saos>
-					<Saos animation={'from-left 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-						><li class="flex w-full items-start justify-center">
+					
+						<li class="flex w-full items-start justify-center">
 							<BioCard imgSrc={aliciaPhoto} name="Alicia">
 								Alicia started playing piano since she was 9 years old and participated in district
 								chorus and concert choir during her school days, singing and dancing in high school
@@ -122,11 +117,8 @@
 								meal at Arby’s.
 							</BioCard>
 							<hr class="mx-4 rounded-xl border border-orange-400" />
-						</li></Saos
-					>
-
-					<Saos animation={'from-right 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-						><li class="flex w-full items-start justify-center pt-8 md:pt-0">
+						</li>
+<li class="flex w-full items-start justify-center pt-8 md:pt-0">
 							<BioCard position="right" imgSrc={jayPhoto} name="Jay">
 								Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
 								craft in between lighting bottle rockets and doing ollies with his friends.
