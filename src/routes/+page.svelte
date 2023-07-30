@@ -1,9 +1,6 @@
 <script lang="ts">
 	import Youtube from 'svelte-youtube-embed';
 	import MdPlayCircleOutline from 'svelte-icons/md/MdPlayCircleOutline.svelte';
-	import mobileBanner from '$lib/assets/wn mobile banner.png';
-	import desktopBanner from '$lib/assets/desktop-banner/wn_desktop_banner_2_nh7wyc_c_scale,w_1600.png';
-	import closeEyesFace from '$lib/assets/WakingNapster6_01_closed.png';
 	import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte';
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
