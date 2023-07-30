@@ -26,12 +26,6 @@
 <div class="animate relative mt-4 flex items-center justify-center">
 	<img
 		loading="eager"
-		srcset="
-wn_mobile_banner_bxda0x_c_scale,w_320.webp 320w,
-wn_mobile_banner_bxda0x_c_scale,w_477.webp 477w,
-wn_mobile_banner_bxda0x_c_scale,w_567.webp 567w,
-wn_mobile_banner_bxda0x_c_scale,w_685.webp 685w,
-wn_mobile_banner_bxda0x_c_scale,w_760.webp 760w"
 		src="wn_mobile_banner_bxda0x_c_scale,w_760.webp"
 		in:fade
 		class="min-h-[20rem] md:hidden"
