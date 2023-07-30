@@ -8,14 +8,23 @@
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
 	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
-	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
 </script>
 
 <svelte:head>
 	<title>Waking Napster</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
-	<link rel="preconnect" href="https://youtube.com" />
+	<link
+		rel="preload"
+		as="image"
+		href="/wn_desktop_banner_jxrmoc_c_scale,w_1600.webp"
+		type="image/webp"
+	/>
+	<link
+		rel="preload"
+		as="image"
+		href="/wn_mobile_banner_bxda0x_c_scale,w_760.webp"
+		type="image/webp"
+	/>
 </svelte:head>
 <div class="animate relative mt-4 flex items-center justify-center">
 	<img
@@ -69,15 +78,11 @@ wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
 				</div>
 			</Youtube>
 		</div>
-		<!-- <div
-			class="absolute bottom-2 left-2 right-2 top-2 flex-shrink flex-grow -translate-x-1 bg-green-300"
-		/> -->
 	</div>
 	<div
 		in:fade={{ delay: 250 }}
 		class="animate shadow-no-blur relative m-2 flex w-[85vw] min-w-max flex-col items-start gap-x-2 gap-y-2 rounded-lg bg-wn-yellow p-4 text-left font-lato text-lg font-bold leading-loose text-pink-600 shadow-black xs:flex-row xs:text-xl md:max-w-xs md:flex-col lg:max-w-sm lg:text-2xl xl:max-w-md"
 	>
-		<!-- <img src={closeEyesFace} class="h-full w-24 p-2" alt="Closed eyes band logo" /> -->
 		<div>
 			<strong class="font-chewy text-xl font-bold xs:text-2xl lg:text-3xl">Get in Touch:</strong>
 			<p class="mt-2">
