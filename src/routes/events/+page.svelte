@@ -50,7 +50,10 @@
 			},
 			eventDataTransform(input) {
 				input.url = '';
-				if (input.title?.toLowerCase().includes('blocked')) {
+				if (
+					input.title?.toLowerCase().includes('blocked') ||
+					input.title?.toLowerCase().includes('wedding')
+				) {
 					input.display = 'none';
 				}
 
