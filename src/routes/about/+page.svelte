@@ -8,7 +8,7 @@
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
 	import BioCard from '$lib/components/BioCard.svelte';
 
-	let activeTab: string = 'members';
+	let activeTab: string = 'band';
 </script>
 
 <svelte:head>
