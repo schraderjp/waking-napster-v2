@@ -106,7 +106,7 @@
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
 
-<div class="w-[100vw] max-w-3xl px-3 lg:p-0">
+<div class="animate mx-auto w-[100vw] max-w-3xl px-3 lg:p-0">
 	<div class="flex w-full flex-col items-center justify-center">
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Event Calendar</h1>
 	</div>

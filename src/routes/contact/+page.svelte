@@ -12,7 +12,7 @@
 	</div>
 
 	<form
-		class="mx-auto flex w-full flex-col gap-y-4 font-chewy text-xl text-purple-600"
+		class="animate mx-auto flex w-full flex-col gap-y-4 font-chewy text-xl text-purple-600"
 		name="contact"
 		method="POST"
 		data-netlify="true"
