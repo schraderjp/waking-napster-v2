@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	export let imgSrc: string;
 	export let name: string;
 	export let srcSet: string = '';
@@ -6,6 +7,7 @@
 </script>
 
 <div
+	in:fly|global={{ delay: 100, x: position === 'left' ? 100 : -100 }}
 	class="mx-auto flex max-w-max flex-col items-center justify-center px-4 py-4 md:block lg:flex lg:flex-row lg:items-center lg:justify-center"
 >
 	<div
@@ -23,7 +25,7 @@
 		</h2>
 	</div>
 	<p
-		class={`max-w-2/3 mt-4 hyphens-auto px-2 text-left font-anybody leading-loose md:mt-0 lg:w-[70ch] lg:text-xl lg:leading-loose ${
+		class={`max-w-2/3 mt-4 h-max hyphens-auto px-2 text-left font-anybody leading-loose md:mt-0 lg:w-[70ch] lg:text-xl lg:leading-loose ${
 			position === 'left' ? 'lg:order-2' : 'lg:order-1'
 		}`}
 	>

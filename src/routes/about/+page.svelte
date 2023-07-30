@@ -1,12 +1,18 @@
 <script lang="ts">
 	import logo from '$lib/assets/WakingNapster.svg';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
-	import { blur, fade, fly, slide } from 'svelte/transition';
+	import { fade, fly, slide } from 'svelte/transition';
 	import aubreyPhoto from '$lib/assets/aubrey-bio.jpeg';
 	import davePhoto from '$lib/assets/dave-bio.jpeg';
 	import aliciaPhoto from '$lib/assets/alicia-bio.jpeg';
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
 	import BioCard from '$lib/components/BioCard.svelte';
+	import IntersectionObserver from 'svelte-intersection-observer';
+
+	let aubreyElement: HTMLElement;
+	let aliciaElement: HTMLElement;
+	let daveElement: HTMLElement;
+	let jayElement: HTMLElement;
 
 	let activeTab: string = 'members';
 </script>
@@ -77,7 +83,7 @@
 		{:else if (activeTab = 'members')}
 			<div in:fade class="mt-2 w-full">
 				<ul class="mx-auto flex flex-col items-center justify-center pt-2">
-					<li class="">
+					<li>
 						<BioCard
 							srcSet="
 						bio-photos/aubrey-bio_pggtjj_c_scale,w_320.jpg 320w,
@@ -97,56 +103,73 @@
 							or hanging with the family. He is not a fan of a certain roast beef selling company
 							that he doesn’t want to mention for fear of being sued.
 						</BioCard>
-						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
-					</li>
-					<li class="">
-						<BioCard position="right" imgSrc={davePhoto} name="Dave">
-							Dave is the backbone of Waking Napster. Besides being a drummer of countless styles,
-							he also produces all the videos that Waking Napster streams, and records live and
-							makes sure that we look pretty in the lighting. Dave has been playing drums since he
-							was a teenager in punk and rock bands in the Fredericksburg area.
 
-							<br class="md:hidden" /><br class="md:hidden" /> Always ready with his sample pad to drop
-							the bass or provide a “Toasty” trigger he keeps the party going, and helps you remember
-							all the fun times you had in the 90’s and 00’s with sound clips at the ready. Dave is also
-							an avid believer that sooner or later the robots are going to take over the earth in a
-							dystopian landscape, so he is actively trying to befriend every electronic device to gain
-							the robots’ trust.
-						</BioCard>
 						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
 					</li>
 
-					<li class="">
-						<BioCard imgSrc={aliciaPhoto} name="Alicia">
-							Alicia started playing piano since she was 9 years old and participated in district
-							chorus and concert choir during her school days, singing and dancing in high school
-							musicals (not the movie but close to it). Growing up with music has fostered a love
-							for the arts that has only grown over the years. <br class="md:hidden" /><br
-								class="md:hidden"
-							/> She has somehow applied her classical music background to keys and joined Waking Napster,
-							which makes complete sense. Blame it on her love for The Offspring and good times, because
-							Alicia believes that you 100% need to make room for fun in life. When she is not playing
-							with her band bros, she is spending time with her super cool family or getting a combo
-							meal at Arby’s.
-						</BioCard>
-						<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
-					</li>
-					<li class="pt-8 md:pt-0">
-						<BioCard
-							srcSet="
-						bio-photos/jay-bio_m53kau_c_scale,w_320.jpg 320w,
-						bio-photos/jay-bio_m53kau_c_scale,w_492.jpg 492w,
-						bio-photos/jay-bio_m53kau_c_scale,w_633.jpg 633w,
-						bio-photos/jay-bio_m53kau_c_scale,w_754.jpg 754w,
-						bio-photos/jay-bio_m53kau_c_scale,w_760.jpg 760w"
-							position="right"
-							imgSrc={jayPhoto}
-							name="Jay"
-						>
-							Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
-							craft in between lighting bottle rockets and doing ollies with his friends.
-						</BioCard>
-					</li>
+					<IntersectionObserver element={daveElement} once let:intersecting threshold={0.4}>
+						<li bind:this={daveElement} class="min-h-[10rem]">
+							{#if intersecting}
+								<BioCard position="right" imgSrc={davePhoto} name="Dave">
+									Dave is the backbone of Waking Napster. Besides being a drummer of countless
+									styles, he also produces all the videos that Waking Napster streams, and records
+									live and makes sure that we look pretty in the lighting. Dave has been playing
+									drums since he was a teenager in punk and rock bands in the Fredericksburg area.
+
+									<br class="md:hidden" /><br class="md:hidden" /> Always ready with his sample pad to
+									drop the bass or provide a “Toasty” trigger he keeps the party going, and helps you
+									remember all the fun times you had in the 90’s and 00’s with sound clips at the ready.
+									Dave is also an avid believer that sooner or later the robots are going to take over
+									the earth in a dystopian landscape, so he is actively trying to befriend every electronic
+									device to gain the robots’ trust.
+								</BioCard>
+							{/if}
+
+							<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
+						</li>
+					</IntersectionObserver>
+
+					<IntersectionObserver element={aliciaElement} once let:intersecting threshold={0.5}>
+						<li bind:this={aliciaElement} class="min-h-[10rem]">
+							{#if intersecting}
+								<BioCard imgSrc={aliciaPhoto} name="Alicia">
+									Alicia started playing piano since she was 9 years old and participated in
+									district chorus and concert choir during her school days, singing and dancing in
+									high school musicals (not the movie but close to it). Growing up with music has
+									fostered a love for the arts that has only grown over the years. <br
+										class="md:hidden"
+									/><br class="md:hidden" /> She has somehow applied her classical music background to
+									keys and joined Waking Napster, which makes complete sense. Blame it on her love for
+									The Offspring and good times, because Alicia believes that you 100% need to make room
+									for fun in life. When she is not playing with her band bros, she is spending time with
+									her super cool family or getting a combo meal at Arby’s.
+								</BioCard>
+							{/if}
+
+							<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
+						</li>
+					</IntersectionObserver>
+					<IntersectionObserver element={jayElement} once let:intersecting threshold={0.5}>
+						<li bind:this={jayElement} class="min-h-[10rem] md:pt-0">
+							{#if intersecting}
+								<BioCard
+									srcSet="
+							bio-photos/jay-bio_m53kau_c_scale,w_320.jpg 320w,
+							bio-photos/jay-bio_m53kau_c_scale,w_492.jpg 492w,
+							bio-photos/jay-bio_m53kau_c_scale,w_633.jpg 633w,
+							bio-photos/jay-bio_m53kau_c_scale,w_754.jpg 754w,
+							bio-photos/jay-bio_m53kau_c_scale,w_760.jpg 760w"
+									position="right"
+									imgSrc={jayPhoto}
+									name="Jay"
+								>
+									Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
+									craft in between lighting bottle rockets and doing ollies with his friends.
+								</BioCard>
+								<hr class="mx-auto my-2 w-7/12 rounded-xl border border-dashed border-indigo-700" />
+							{/if}
+						</li>
+					</IntersectionObserver>
 				</ul>
 			</div>
 		{/if}
