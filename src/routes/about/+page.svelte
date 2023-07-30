@@ -6,7 +6,7 @@
 	import davePhoto from '$lib/assets/dave-bio.jpeg';
 	import aliciaPhoto from '$lib/assets/alicia-bio.jpeg';
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
-	import BioCard '$lib/components/BioCard.svelte';
+	import BioCard from '$lib/components/BioCard.svelte';
 
 	let activeTab: string = 'band';
 </script>
