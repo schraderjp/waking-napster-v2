@@ -21,10 +21,10 @@
 	<title>Waking Napster - About the Band</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<div class="flex w-screen flex-col items-center justify-center pt-4">
+<div class="flex w-screen flex-col items-center justify-center overflow-hidden pt-4">
 	<h1 class="pb-4 font-chewy text-4xl text-green-500">About</h1>
 
-	<div class="relative flex w-[min(95vw,32rem)] items-center justify-center rounded-lg bg-blue-300">
+	<div class="relative flex w-[min(90vw,32rem)] items-center justify-center rounded-lg bg-blue-300">
 		<div
 			class={`absolute bottom-1 right-1 top-1 z-10 w-[calc(50%-0.25rem)] rounded-lg transition-transform ${
 				activeTab === 'band' ? 'translate-x-[-100%]' : 'translate-x-0'

@@ -8,7 +8,7 @@
 	<title>Waking Napster - Contact Us</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<div class="w-[min(100vw,600px)] px-4">
+<div class="mx-auto w-[min(100vw,600px)] overflow-hidden px-4">
 	<div class="flex items-center justify-center">
 		<h1 class="py-4 font-chewy text-4xl text-green-500">Contact Us</h1>
 	</div>

@@ -15,10 +15,12 @@
 <svelte:head>
 	<title>Waking Napster</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
+	<link rel="preconnect" href="https://youtube.com" />
 </svelte:head>
 <TransitionOnMount>
-	<div class="relative mx-auto mt-4 flex w-full items-center justify-center">
+	<div class="relative mt-4 flex items-center justify-center">
 		<img
+			loading="eager"
 			srcset="
 		wn_mobile_banner_f28rik_c_scale,w_320.webp 320w,
 		wn_mobile_banner_f28rik_c_scale,w_486.webp 486w,
@@ -34,6 +36,7 @@
 		/>
 
 		<img
+			loading="eager"
 			in:fade
 			width="1600"
 			height="618"
@@ -60,7 +63,7 @@ wn_desktop_banner_2_v9vojv_c_scale,w_1920.webp 1920w"
 
 	<div
 		in:fade={{ delay: 200 }}
-		class="relative -z-10 mx-auto flex flex-col items-center justify-center gap-x-2 gap-y-2 p-4 md:flex-row md:justify-around"
+		class="relative -z-10 flex flex-col items-center justify-center gap-x-2 gap-y-2 p-4 md:flex-row md:justify-around"
 	>
 		<div class="relative -z-10 mt-2 h-full w-full">
 			<div class="z-20">

@@ -42,8 +42,8 @@
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-<div class="relative mx-auto flex flex-col items-center justify-center pt-2 lg:container">
-	<header class="flex w-screen justify-center gap-x-12">
+<div class="relative mx-auto flex w-full flex-col items-center justify-center pt-2 lg:container">
+	<header class="flex w-full justify-center gap-x-12">
 		<img
 			on:focus={() => (hovering = true)}
 			on:blur={() => (hovering = false)}
@@ -64,7 +64,7 @@
 		>
 			<div class={`z-50 flex items-end justify-end ${open ? 'fixed' : ''}`}>
 				<Hamburger
-					--color="#db2777"
+					--color="rgb(190 24 93)"
 					--hover-opacity="1"
 					--active-color="#a855f7"
 					--layer-width="2rem"
@@ -82,7 +82,7 @@
 	</header>
 	{#key pathname}
 		<main
-			class={`relative z-0 max-w-[100vw]`}
+			class={`relative z-0 mx-auto w-full overflow-x-hidden`}
 			in:fade={{ duration: 100, delay: 100 }}
 			out:fade={{ duration: 100 }}
 		>
@@ -140,6 +140,6 @@
 			>
 		</div>
 
-		<p class="font-bold text-pink-600">&copy; Waking Napster 2023</p>
+		<p class="font-bold text-pink-700">&copy; Waking Napster 2023</p>
 	</footer>
 {/key}
