@@ -23,7 +23,7 @@
 		</h2>
 	</div>
 	<p
-		class={`max-w-2/3 mt-4 hyphens-auto px-2 text-left font-anybody leading-loose md:mt-0 lg:w-[70ch] ${
+		class={`max-w-2/3 mt-4 hyphens-auto px-2 text-left font-anybody leading-loose md:mt-0 lg:w-[70ch] lg:text-xl lg:leading-loose ${
 			position === 'left' ? 'lg:order-2' : 'lg:order-1'
 		}`}
 	>
