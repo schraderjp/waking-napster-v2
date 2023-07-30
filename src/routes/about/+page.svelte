@@ -7,6 +7,8 @@
 	import aliciaPhoto from '$lib/assets/alicia-bio.jpeg';
 	import jayPhoto from '$lib/assets/jay-bio.jpeg';
 	import BioCard from '$lib/components/BioCard.svelte';
+	import Saos from 'saos';
+
 	let activeTab: string = 'band';
 </script>
 
@@ -69,59 +71,68 @@
 		{:else if (activeTab = 'members')}
 			<div in:fade class="mt-2 w-full">
 				<ul class="mx-auto flex flex-col items-center justify-center pt-2">
-					<li class="flex w-full items-start justify-center">
-						<BioCard name="Aubrey" imgSrc={aubreyPhoto}
-							>Aubrey (Acoustic Aubrey) started playing classical guitar at 15 years old and
-							participated in jazz bands, bluegrass jams, and developed a regionally known jazz trio
-							that was renown for swing and hired by UVA for swing dances. As much fun as playing
-							jazz music was, Aubrey wanted to get into a more exciting party atmosphere and build a
-							90’s, 00’s party band.
+					<Saos animation={'from-left 0.5s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+						<li class="flex w-full items-start justify-center">
+							<BioCard name="Aubrey" imgSrc={aubreyPhoto}
+								>Aubrey (Acoustic Aubrey) started playing classical guitar at 15 years old and
+								participated in jazz bands, bluegrass jams, and developed a regionally known jazz
+								trio that was renown for swing and hired by UVA for swing dances. As much fun as
+								playing jazz music was, Aubrey wanted to get into a more exciting party atmosphere
+								and build a 90’s, 00’s party band.
 
-							<br class="md:hidden" /><br class="md:hidden" />He enjoys taking all types of music
-							and building a fun party vibe as well as join in on the fun of sharing a moment in
-							time with fans of Waking Napster. When not playing music he is… playing music, working
-							or hanging with the family. He is not a fan of a certain roast beef selling company
-							that he doesn’t want to mention for fear of being sued.
-						</BioCard>
-						<hr class="runded-xl mx-4 border border-orange-400" />
-					</li>
-					<li class="flex w-full items-start justify-center">
-						<BioCard position="right" imgSrc={davePhoto} name="Dave">
-							Dave is the backbone of Waking Napster. Besides being a drummer of countless styles,
-							he also produces all the videos that Waking Napster streams, and records live and
-							makes sure that we look pretty in the lighting. Dave has been playing drums since he
-							was a teenager in punk and rock bands in the Fredericksburg area.
+								<br class="md:hidden" /><br class="md:hidden" />He enjoys taking all types of music
+								and building a fun party vibe as well as join in on the fun of sharing a moment in
+								time with fans of Waking Napster. When not playing music he is… playing music,
+								working or hanging with the family. He is not a fan of a certain roast beef selling
+								company that he doesn’t want to mention for fear of being sued.
+							</BioCard>
+							<hr class="runded-xl mx-4 border border-orange-400" />
+						</li>
+					</Saos>
+					<Saos animation={'from-right 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+						<li class="flex w-full items-start justify-center">
+							<BioCard position="right" imgSrc={davePhoto} name="Dave">
+								Dave is the backbone of Waking Napster. Besides being a drummer of countless styles,
+								he also produces all the videos that Waking Napster streams, and records live and
+								makes sure that we look pretty in the lighting. Dave has been playing drums since he
+								was a teenager in punk and rock bands in the Fredericksburg area.
 
-							<br class="md:hidden" /><br class="md:hidden" /> Always ready with his sample pad to drop
-							the bass or provide a “Toasty” trigger he keeps the party going, and helps you remember
-							all the fun times you had in the 90’s and 00’s with sound clips at the ready. Dave is also
-							an avid believer that sooner or later the robots are going to take over the earth in a
-							dystopian landscape, so he is actively trying to befriend every electronic device to gain
-							the robots’ trust.
-						</BioCard>
-						<hr class="mx-4 rounded-xl border border-orange-400" />
-					</li>
-					<li class="flex w-full items-start justify-center">
-						<BioCard imgSrc={aliciaPhoto} name="Alicia">
-							Alicia started playing piano since she was 9 years old and participated in district
-							chorus and concert choir during her school days, singing and dancing in high school
-							musicals (not the movie but close to it). Growing up with music has fostered a love
-							for the arts that has only grown over the years. <br class="md:hidden" /><br
-								class="md:hidden"
-							/> She has somehow applied her classical music background to keys and joined Waking Napster,
-							which makes complete sense. Blame it on her love for The Offspring and good times, because
-							Alicia believes that you 100% need to make room for fun in life. When she is not playing
-							with her band bros, she is spending time with her super cool family or getting a combo
-							meal at Arby’s.
-						</BioCard>
-						<hr class="mx-4 rounded-xl border border-orange-400" />
-					</li>
-					<li class="flex w-full items-start justify-center pt-8 md:pt-0">
-						<BioCard position="right" imgSrc={jayPhoto} name="Jay">
-							Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
-							craft in between lighting bottle rockets and doing ollies with his friends.
-						</BioCard>
-					</li>
+								<br class="md:hidden" /><br class="md:hidden" /> Always ready with his sample pad to
+								drop the bass or provide a “Toasty” trigger he keeps the party going, and helps you remember
+								all the fun times you had in the 90’s and 00’s with sound clips at the ready. Dave is
+								also an avid believer that sooner or later the robots are going to take over the earth
+								in a dystopian landscape, so he is actively trying to befriend every electronic device
+								to gain the robots’ trust.
+							</BioCard>
+							<hr class="mx-4 rounded-xl border border-orange-400" />
+						</li>
+					</Saos>
+					<Saos animation={'from-left 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
+						><li class="flex w-full items-start justify-center">
+							<BioCard imgSrc={aliciaPhoto} name="Alicia">
+								Alicia started playing piano since she was 9 years old and participated in district
+								chorus and concert choir during her school days, singing and dancing in high school
+								musicals (not the movie but close to it). Growing up with music has fostered a love
+								for the arts that has only grown over the years. <br class="md:hidden" /><br
+									class="md:hidden"
+								/> She has somehow applied her classical music background to keys and joined Waking Napster,
+								which makes complete sense. Blame it on her love for The Offspring and good times, because
+								Alicia believes that you 100% need to make room for fun in life. When she is not playing
+								with her band bros, she is spending time with her super cool family or getting a combo
+								meal at Arby’s.
+							</BioCard>
+							<hr class="mx-4 rounded-xl border border-orange-400" />
+						</li></Saos
+					>
+
+					<Saos animation={'from-right 0.8s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
+						><li class="flex w-full items-start justify-center pt-8 md:pt-0">
+							<BioCard position="right" imgSrc={jayPhoto} name="Jay">
+								Dredged from the murk of Lake Erie, Jay somehow found the time to hone his low-end
+								craft in between lighting bottle rockets and doing ollies with his friends.
+							</BioCard>
+						</li></Saos
+					>
 				</ul>
 			</div>
 		{/if}
@@ -129,4 +140,25 @@
 </div>
 
 <style>
+	@keyframes -global-from-left {
+		0% {
+			transform: translateX(-200px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes -global-from-right {
+		0% {
+			transform: translateX(200px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
 </style>
