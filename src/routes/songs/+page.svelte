@@ -30,7 +30,7 @@
 		};
 	}
 
-	let filterOrder: string = 'asc';
+	let filterOrder: string = 'desc';
 	let filterIndex: number = 0;
 	let filterText = '';
 	$: filterText, filterOrder;
