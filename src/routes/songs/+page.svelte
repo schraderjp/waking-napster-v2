@@ -12,6 +12,17 @@
 		return songs as string[][];
 	};
 
+	function getFilteredSongs(items: string[][], text: string) {
+		const filteredSongs = items.filter((item) => {
+			if (item[0] && item[0].toLowerCase().includes(text.toLowerCase())) return true;
+			if (item[1] && item[1].toLowerCase().includes(text.toLowerCase())) return true;
+			if (item[2] && item[2].toLowerCase().includes(text.toLowerCase())) return true;
+			if (item[3] && item[3].toLowerCase().includes(text.toLowerCase())) return true;
+		});
+
+		return filteredSongs;
+	}
+
 	function setFilter(index: number) {
 		return () => {
 			filterOrder === 'asc' ? (filterOrder = 'desc') : (filterOrder = 'asc');
@@ -21,6 +32,8 @@
 
 	let filterOrder: string = 'asc';
 	let filterIndex: number = 0;
+	let filterText = '';
+	$: filterText, filterOrder;
 	let visible = false;
 </script>
 
@@ -43,11 +56,19 @@
 			</div>
 		{:then items}
 			{#if visible}
-				{@const filteredItems =
+				{@const filteredItems = getFilteredSongs(items, filterText)}
+				{@const filteredSongs =
 					filterOrder === 'asc'
-						? sort(items).desc((item) => item[filterIndex])
-						: sort(items).asc((item) => item[filterIndex])}
-
+						? sort(filteredItems).desc((song) => song[filterIndex])
+						: sort(filteredItems).asc((song) => song[filterIndex])}
+				<div class="flex h-full w-full items-center justify-center pt-2">
+					<input
+						class="mx-auto mb-2 w-11/12 rounded-md font-lato text-blue-900"
+						bind:value={filterText}
+						type="text"
+						placeholder="Search for a song"
+					/>
+				</div>
 				<table
 					in:fade={{ delay: 100 }}
 					class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
@@ -119,8 +140,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						{#if filteredItems}
-							{#each filteredItems as song}
+						{#if filteredSongs}
+							{#each filteredSongs as song}
 								<tr>
 									<td>{song[0] ? song[0] : ''}</td>
 									<td>{song[1] ? song[1] : ''}</td>
