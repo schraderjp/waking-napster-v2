@@ -41,6 +41,7 @@
 		"@fullcalendar/list": "^6.1.8",
 		"@svelte-put/clickoutside": "^3.0.0",
 		"@sveltejs/adapter-netlify": "^2.0.8",
+		"fast-sort": "^3.4.0",
 		"googleapis": "^122.0.0",
 		"svelte-icons": "^2.1.0",
 		"svelte-intersection-observer": "^0.10.1"

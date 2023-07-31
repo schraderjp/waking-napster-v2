@@ -79,13 +79,13 @@ wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
 	</div>
 	<div
 		in:fade={{ delay: 250 }}
-		class="animate shadow-no-blur relative m-2 flex w-[85vw] min-w-max flex-col items-start gap-x-2 gap-y-2 rounded-lg bg-wn-yellow p-4 text-left font-lato text-lg font-bold leading-loose text-pink-600 shadow-black xs:flex-row xs:text-xl md:max-w-xs md:flex-col lg:max-w-sm lg:text-2xl xl:max-w-md"
+		class="animate shadow-no-blur relative m-2 flex w-[85vw] min-w-max max-w-max flex-col items-start gap-x-6 gap-y-2 rounded-lg bg-wn-yellow p-2 text-left font-lato text-lg font-bold leading-loose text-pink-600 shadow-black xs:flex-row md:flex-col"
 	>
 		<div>
-			<strong class="font-chewy text-xl font-bold xs:text-2xl lg:text-3xl">Get in Touch:</strong>
-			<p class="mt-2">
+			<strong class="font-chewy text-xl font-bold xs:text-xl lg:text-2xl">Get in Touch:</strong>
+			<p class="mt-2 sm:mt-1">
 				<a
-					class="inline-flex items-center font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+					class="inline-flex items-center font-lato text-lg text-purple-700 underline hover:text-purple-400 lg:text-xl"
 					href="/contact"
 				>
 					<span
@@ -98,15 +98,13 @@ wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
 		</div>
 
 		<div>
-			<p class="md:mt-4">
-				<strong class="font-chewy text-xl font-bold xs:text-2xl lg:text-3xl"
-					>See More Videos:</strong
-				>
+			<p class="">
+				<strong class="font-chewy text-xl font-bold lg:text-2xl">See More Videos:</strong>
 			</p>
-			<ul class="mt-2 flex flex-col items-start justify-center gap-y-4">
+			<ul class="mt-1 flex flex-col items-start justify-center gap-y-4">
 				<li>
 					<a
-						class="inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+						class="inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 lg:text-xl"
 						href="https://www.youtube.com/@wakingnapster/videos"
 						><span
 							class="mx-1 my-auto inline-flex h-8 w-8 items-center justify-center sm:h-10 sm:w-10 lg:h-12 lg:w-12"
@@ -117,7 +115,7 @@ wn_desktop_banner_jxrmoc_c_scale,w_1600.webp 1600w"
 				</li>
 				<li>
 					<a
-						class=" inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 xs:text-xl lg:text-2xl"
+						class=" inline-flex items-center align-bottom font-lato text-lg text-purple-700 underline hover:text-purple-400 lg:text-xl"
 						href="https://www.facebook.com/wakingnapster"
 						><span
 							class="mx-1 my-auto inline-flex h-8 w-8 items-center justify-center sm:h-10 sm:w-10 lg:h-12 lg:w-12"

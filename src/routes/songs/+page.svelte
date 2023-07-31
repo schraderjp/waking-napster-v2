@@ -1,13 +1,26 @@
 <script lang="ts">
 	import smallLogo from '$lib/assets/WakingNapster6_03_open.png';
 	import { fade } from 'svelte/transition';
+	import { sort } from 'fast-sort';
+	import FaSortDown from 'svelte-icons/fa/FaSortDown.svelte';
+	import FaSortUp from 'svelte-icons/fa/FaSortUp.svelte';
+	import FaSort from 'svelte-icons/fa/FaSort.svelte';
 	const fetchSheetData = async () => {
 		const res = await fetch('/songs/api');
 		const songs = await res.json();
 
-		return songs;
+		return songs as string[][];
 	};
 
+	function setFilter(index: number) {
+		return () => {
+			filterOrder === 'asc' ? (filterOrder = 'desc') : (filterOrder = 'asc');
+			filterIndex = index;
+		};
+	}
+
+	let filterOrder: string = 'asc';
+	let filterIndex: number = 0;
 	let visible = false;
 </script>
 
@@ -30,21 +43,84 @@
 			</div>
 		{:then items}
 			{#if visible}
+				{@const filteredItems =
+					filterOrder === 'asc'
+						? sort(items).desc((item) => item[filterIndex])
+						: sort(items).asc((item) => item[filterIndex])}
+
 				<table
 					in:fade={{ delay: 100 }}
 					class="z-40 w-full table-auto border-separate border-spacing-0 overflow-x-scroll whitespace-break-spaces border border-blue-300 bg-blue-100 font-lato text-xs xs:text-sm sm:text-base"
 				>
-					<thead>
+					<thead class="w-full">
 						<tr class="sm:text-base">
-							<th class="">Title</th>
-							<th>Artist</th>
-							<th>Genre</th>
-							<th class="">Year</th>
+							<th
+								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
+								on:click={setFilter(0)}
+							>
+								<div class="flex items-center justify-between">
+									<div>Title</div>
+									<div class="h-6 w-6">
+										{#if filterOrder === 'asc' && filterIndex === 0}
+											<FaSortDown />
+										{:else if filterOrder === 'desc' && filterIndex === 0}
+											<FaSortUp />{:else}
+											<FaSort />
+										{/if}
+									</div>
+								</div>
+							</th>
+							<th
+								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
+								on:click={setFilter(1)}
+								><div class="flex items-center justify-between">
+									<div>Artist</div>
+									<div class="h-6 w-6">
+										{#if filterOrder === 'asc' && filterIndex === 1}
+											<FaSortDown />
+										{:else if filterOrder === 'desc' && filterIndex === 1}
+											<FaSortUp />
+										{:else}
+											<FaSort />
+										{/if}
+									</div>
+								</div></th
+							>
+							<th
+								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
+								on:click={setFilter(2)}
+								><div class="flex items-center justify-between">
+									<div>Genre</div>
+									<div class="h-6 w-6">
+										{#if filterOrder === 'asc' && filterIndex === 2}
+											<FaSortDown />
+										{:else if filterOrder === 'desc' && filterIndex === 2}
+											<FaSortUp />{:else}
+											<FaSort />
+										{/if}
+									</div>
+								</div></th
+							>
+							<th
+								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
+								on:click={setFilter(3)}
+								><div class="flex items-center justify-between">
+									<div>Year</div>
+									<div class="h-6 w-6">
+										{#if filterOrder === 'asc' && filterIndex === 3}
+											<FaSortDown />
+										{:else if filterOrder === 'desc' && filterIndex === 3}
+											<FaSortUp />{:else}
+											<FaSort />
+										{/if}
+									</div>
+								</div></th
+							>
 						</tr>
 					</thead>
 					<tbody>
-						{#if items}
-							{#each items as song}
+						{#if filteredItems}
+							{#each filteredItems as song}
 								<tr>
 									<td>{song[0] ? song[0] : ''}</td>
 									<td>{song[1] ? song[1] : ''}</td>
