@@ -5,6 +5,7 @@
 	import FaYoutube from 'svelte-icons/fa/FaYoutube.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
 	import { fade } from 'svelte/transition';
+	import Logo from '$lib/components/Logo.svelte';
 </script>
 
 <svelte:head>

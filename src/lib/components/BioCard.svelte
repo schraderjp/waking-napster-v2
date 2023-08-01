@@ -4,6 +4,7 @@
 	export let name: string;
 	export let srcSet: string = '';
 	export let position: 'left' | 'right' = 'left';
+	export let title = '';
 </script>
 
 <div
@@ -17,7 +18,7 @@
 				: 'md:float-right md:ml-4 lg:order-2 lg:float-none lg:mr-0'
 		} md:mb-2  md:w-60`}
 	>
-		<img width="720" height="760" class="" srcset={srcSet} src={imgSrc} alt={name} />
+		<img width="720" height="760" class="" srcset={srcSet} src={imgSrc} alt={name} {title} />
 		<h2
 			class="absolute left-0 right-0 top-0 bg-black bg-opacity-60 py-2 text-center font-chewy text-3xl text-wn-yellow"
 		>
