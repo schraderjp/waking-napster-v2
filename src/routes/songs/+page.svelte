@@ -5,13 +5,9 @@
 	import FaSortDown from 'svelte-icons/fa/FaSortDown.svelte';
 	import FaSortUp from 'svelte-icons/fa/FaSortUp.svelte';
 	import FaSort from 'svelte-icons/fa/FaSort.svelte';
+	import type { PageData } from './$types';
 
-	const fetchSheetData = async () => {
-		const res = await fetch('/songs/api');
-		const songs = await res.json();
-
-		return songs as string[][];
-	};
+	export let data: PageData;
 
 	function getFilteredSongs(items: string[][], text: string) {
 		const filteredSongs = items.filter((item) => {
@@ -30,12 +26,16 @@
 			filterIndex = index;
 		};
 	}
+	$:filteredItems = getFilteredSongs(data.data.rows, filterText);
+	$:filteredSongs =
+					filterOrder === 'asc'
+						? sort(filteredItems).desc((song) => song[filterIndex])
+						: sort(filteredItems).asc((song) => song[filterIndex])
 
 	let filterOrder: string = 'desc';
 	let filterIndex: number = 0;
 	let filterText = '';
 	$: filterText, filterOrder;
-	let visible = false;
 </script>
 
 <svelte:head>
@@ -45,23 +45,7 @@
 <div class="animate relative z-10 flex flex-col items-center justify-center">
 	<h1 class="py-4 font-chewy text-4xl text-green-500">Our Song List</h1>
 	<div class="relative w-[min(90vw,46rem)] overflow-x-auto">
-		{#await fetchSheetData()}
-			<div
-				in:fade
-				out:fade={{ duration: 50 }}
-				on:introstart={() => (visible = false)}
-				on:outroend={() => (visible = true)}
-				class="mx-auto mt-8 flex w-16 animate-bounce items-center justify-center"
-			>
-				<img src={smallLogo} alt="Logo loading indicator" />
-			</div>
-		{:then items}
-			{#if visible}
-				{@const filteredItems = getFilteredSongs(items, filterText)}
-				{@const filteredSongs =
-					filterOrder === 'asc'
-						? sort(filteredItems).desc((song) => song[filterIndex])
-						: sort(filteredItems).asc((song) => song[filterIndex])}
+		
 				<div class="flex h-full w-full items-center justify-center pt-2">
 					<input
 						class="mx-auto mb-2 w-11/12 rounded-md font-lato text-blue-900"
@@ -153,10 +137,7 @@
 						{/if}
 					</tbody>
 				</table>
-			{/if}
-		{:catch error}
-			<p transition:fade class="red-500">Something went wrong! Please try again later.</p>
-		{/await}
+			
 	</div>
 </div>
 
