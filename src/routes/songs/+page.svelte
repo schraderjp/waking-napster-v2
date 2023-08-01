@@ -1,6 +1,8 @@
 <script lang="ts">
-	import smallLogo from '$lib/assets/WakingNapster6_03_open.png';
 	import { fade } from 'svelte/transition';
+	import TiArrowSortedDown from 'svelte-icons/ti/TiArrowSortedDown.svelte'
+	import TiArrowSortedUp from 'svelte-icons/ti/TiArrowSortedUp.svelte'
+	import TiArrowUnsorted from 'svelte-icons/ti/TiArrowUnsorted.svelte'
 	import { sort } from 'fast-sort';
 	import FaSortDown from 'svelte-icons/fa/FaSortDown.svelte';
 	import FaSortUp from 'svelte-icons/fa/FaSortUp.svelte';
@@ -68,10 +70,10 @@
 									<div>Title</div>
 									<div class="h-6 w-6">
 										{#if filterOrder === 'asc' && filterIndex === 0}
-											<FaSortDown />
+											<TiArrowSortedDown />
 										{:else if filterOrder === 'desc' && filterIndex === 0}
-											<FaSortUp />{:else}
-											<FaSort />
+											<TiArrowSortedUp />{:else}
+											<TiArrowUnsorted />
 										{/if}
 									</div>
 								</div>
@@ -79,15 +81,15 @@
 							<th
 								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
 								on:click={setFilter(1)}
-								><div class="flex items-center justify-between">
+								><div class="flex items-center gap-x-2 justify-between">
 									<div>Artist</div>
-									<div class="h-6 w-6">
+									<div class="h-6 w-6 flex-shrink-0">
 										{#if filterOrder === 'asc' && filterIndex === 1}
-											<FaSortDown />
+											<TiArrowSortedDown />
 										{:else if filterOrder === 'desc' && filterIndex === 1}
-											<FaSortUp />
+											<TiArrowSortedUp />
 										{:else}
-											<FaSort />
+											<TiArrowUnsorted />
 										{/if}
 									</div>
 								</div></th
@@ -99,10 +101,10 @@
 									<div>Genre</div>
 									<div class="h-6 w-6">
 										{#if filterOrder === 'asc' && filterIndex === 2}
-											<FaSortDown />
+											<TiArrowSortedDown />
 										{:else if filterOrder === 'desc' && filterIndex === 2}
-											<FaSortUp />{:else}
-											<FaSort />
+											<TiArrowSortedUp />{:else}
+											<TiArrowUnsorted />
 										{/if}
 									</div>
 								</div></th
@@ -110,14 +112,14 @@
 							<th
 								class="cursor-pointer select-none hover:brightness-110 active:brightness-110"
 								on:click={setFilter(3)}
-								><div class="flex items-center justify-between">
+								><div class="flex items-center gap-x-2 justify-between pr-2">
 									<div>Year</div>
-									<div class="h-6 w-6">
+									<div class="h-6 w-6 flex-shrink-0">
 										{#if filterOrder === 'asc' && filterIndex === 3}
-											<FaSortDown />
+											<TiArrowSortedDown />
 										{:else if filterOrder === 'desc' && filterIndex === 3}
-											<FaSortUp />{:else}
-											<FaSort />
+											<TiArrowSortedUp />{:else}
+											<TiArrowUnsorted />
 										{/if}
 									</div>
 								</div></th
