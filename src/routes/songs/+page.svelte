@@ -5,6 +5,7 @@
 	import FaSortDown from 'svelte-icons/fa/FaSortDown.svelte';
 	import FaSortUp from 'svelte-icons/fa/FaSortUp.svelte';
 	import FaSort from 'svelte-icons/fa/FaSort.svelte';
+
 	const fetchSheetData = async () => {
 		const res = await fetch('/songs/api');
 		const songs = await res.json();
