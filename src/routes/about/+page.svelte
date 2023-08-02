@@ -21,7 +21,7 @@
 	<title>Waking Napster - About the Band</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<div class="flex w-screen flex-col items-center justify-center overflow-hidden pt-4">
+<div class="mx-auto flex flex-col items-center justify-center overflow-hidden pt-4">
 	<h1 class="pb-4 font-chewy text-4xl text-green-500">About</h1>
 
 	<div class="relative flex w-[min(90vw,32rem)] items-center justify-center rounded-lg bg-blue-300">
