@@ -10,26 +10,31 @@
 >
 	<a
 		on:click
+		title="Home"
 		class="p-2 font-chewy font-bold text-pink-700 transition-all hover:scale-110 hover:text-purple-500"
 		href="/">Home</a
 	>
 	<a
 		on:click
+		title="Events"
 		class="p-2 font-chewy font-bold text-pink-700 transition-all hover:scale-110 hover:text-purple-500"
 		href="/events">Events</a
 	>
 	<a
 		on:click
+		title="Songs"
 		class="p-2 font-chewy font-bold text-pink-700 transition-all hover:scale-110 hover:text-purple-500"
 		href="/songs">Songs</a
 	>
 	<a
 		on:click
+		title="About"
 		class="p-2 font-chewy font-bold text-pink-700 transition-all hover:scale-110 hover:text-purple-500"
 		href="/about">About</a
 	>
 	<a
 		on:click
+		title="Contact Us"
 		class="text-outline p-2 font-chewy font-bold text-pink-700 transition-all hover:scale-110 hover:text-purple-500"
 		href="/contact">Contact Us</a
 	>

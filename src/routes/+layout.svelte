@@ -13,10 +13,11 @@
 	import FaSoundcloud from 'svelte-icons/fa/FaSoundcloud.svelte';
 	import { Hamburger } from 'svelte-hamburgers';
 	import { browser } from '$app/environment';
-	import { blur, fade } from 'svelte/transition';
+	import { blur, fade, scale } from 'svelte/transition';
 	import { clickoutside } from '@svelte-put/clickoutside';
 
 	let open: boolean = false;
+	let chatBubbleShown = false;
 	let screenSize: number;
 	let hovering = false;
 	export let data;
@@ -44,16 +45,38 @@
 <svelte:window bind:innerWidth={screenSize} />
 <div class="relative mx-auto flex w-full flex-col items-center justify-center pt-2 lg:container">
 	<header class="flex w-full justify-center gap-x-12">
-		<img
-			on:focus={() => (hovering = true)}
-			on:blur={() => (hovering = false)}
-			on:mouseout={() => (hovering = false)}
-			on:mouseover={() => (hovering = true)}
-			width="200"
-			src={hovering ? altLogo : logo}
-			alt="Waking Napster logo"
-			class="h-full w-36 xs:w-48"
-		/>
+		<div role="banner" class="relative h-max w-max">
+			<button
+				use:clickoutside
+				on:clickoutside={() => (chatBubbleShown = false)}
+				on:click={() => {
+					chatBubbleShown = !chatBubbleShown;
+				}}
+				class="peer absolute left-[2.25rem] top-16 z-50 h-9 w-7 cursor-pointer rounded-full bg-transparent"
+			/>
+			<img
+				width="864"
+				height="504"
+				src={logo}
+				alt="Waking Napster logo"
+				class="block h-full w-36 peer-hover:hidden xs:w-48"
+			/>
+			<img
+				width="864"
+				height="504"
+				src={altLogo}
+				alt="Waking Napster logo"
+				class="hidden h-full w-36 peer-hover:block xs:w-48"
+			/>
+			{#if false}
+				<div
+					transition:scale
+					class="absolute left-12 top-6 z-40 w-36 rounded-xl bg-purple-700 p-2 font-chewy text-lg text-wn-yellow transition-opacity after:absolute after:-top-5 after:left-[50%] after:z-40 after:-ml-5 after:border-[1.25rem] after:border-t-0 after:border-transparent after:border-b-purple-700 xs:-left-6 xs:top-[110%]"
+				>
+					<a href="/songs"> See what people are saying! </a>
+				</div>
+			{/if}
+		</div>
 		<div class="hidden md:flex">
 			<Nav on:click={() => (open = false)} />
 		</div>

@@ -21,7 +21,7 @@
 	<title>Waking Napster - About the Band</title>
 	<meta name="description" content="90s cover band in Culpeper, VA" />
 </svelte:head>
-<div class="flex w-screen flex-col items-center justify-center overflow-hidden pt-4">
+<div class="mx-auto flex flex-col items-center justify-center overflow-hidden pt-4">
 	<h1 class="pb-4 font-chewy text-4xl text-green-500">About</h1>
 
 	<div class="relative flex w-[min(90vw,32rem)] items-center justify-center rounded-lg bg-blue-300">
@@ -84,6 +84,7 @@
 			<ul class="mx-auto flex flex-col items-center justify-center pt-2">
 				<li>
 					<BioCard
+						title="A bit of a diva"
 						srcSet="
 						bio-photos/aubrey-bio_pggtjj_c_scale,w_320.jpg 320w,
 						bio-photos/aubrey-bio_pggtjj_c_scale,w_592.jpg 592w,
@@ -109,7 +110,7 @@
 				<IntersectionObserver element={daveElement} once let:intersecting threshold={0.4}>
 					<li bind:this={daveElement} class="min-h-[10rem]">
 						{#if intersecting}
-							<BioCard position="right" imgSrc={davePhoto} name="Dave">
+							<BioCard title="Aficionado" position="right" imgSrc={davePhoto} name="Dave">
 								Dave is the backbone of Waking Napster. Besides being a drummer of countless styles,
 								he also produces all the videos that Waking Napster streams, and records live and
 								makes sure that we look pretty in the lighting. Dave has been playing drums since he
@@ -131,7 +132,7 @@
 				<IntersectionObserver element={aliciaElement} once let:intersecting threshold={0.5}>
 					<li bind:this={aliciaElement} class="min-h-[10rem]">
 						{#if intersecting}
-							<BioCard imgSrc={aliciaPhoto} name="Alicia">
+							<BioCard title="Unoffical Arby's spokesperson" imgSrc={aliciaPhoto} name="Alicia">
 								Alicia started playing piano since she was 9 years old and participated in district
 								chorus and concert choir during her school days, singing and dancing in high school
 								musicals (not the movie but close to it). Growing up with music has fostered a love
@@ -152,6 +153,7 @@
 					<li bind:this={jayElement} class="min-h-[10rem] md:pt-0">
 						{#if intersecting}
 							<BioCard
+								title="Hoodlum"
 								srcSet="
 							bio-photos/jay-bio_m53kau_c_scale,w_320.jpg 320w,
 							bio-photos/jay-bio_m53kau_c_scale,w_492.jpg 492w,

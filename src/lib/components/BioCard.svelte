@@ -4,6 +4,7 @@
 	export let name: string;
 	export let srcSet: string = '';
 	export let position: 'left' | 'right' = 'left';
+	export let title = '';
 </script>
 
 <div
@@ -13,11 +14,11 @@
 	<div
 		class={`photo-card relative mx-auto border-[8px] border-wn-dark-blue shadow-wn-orange xs:w-72 sm:w-96 lg:w-1/3 ${
 			position === 'left'
-				? 'md:float-left md:mr-4 lg:order-1 lg:float-none lg:ml-0'
-				: 'md:float-right md:ml-4 lg:order-2 lg:float-none lg:mr-0'
+				? 'md:float-left md:mr-6 lg:order-1 lg:float-none lg:ml-0'
+				: 'md:float-right md:ml-6 lg:order-2 lg:float-none lg:mr-0'
 		} md:mb-2  md:w-60`}
 	>
-		<img width="720" height="760" class="" srcset={srcSet} src={imgSrc} alt={name} />
+		<img width="720" height="760" class="" srcset={srcSet} src={imgSrc} alt={name} {title} />
 		<h2
 			class="absolute left-0 right-0 top-0 bg-black bg-opacity-60 py-2 text-center font-chewy text-3xl text-wn-yellow"
 		>
