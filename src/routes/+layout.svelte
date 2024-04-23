@@ -163,6 +163,6 @@
 			>
 		</div>
 
-		<p class="font-bold text-pink-700">&copy; Waking Napster 2023</p>
+		<p class="font-bold text-pink-700">&copy; Waking Napster {new Intl.DateTimeFormat('en-US', {year: "numeric"}).format(new Date())}</p>
 	</footer>
 {/key}
